@@ -1,16 +1,16 @@
 import type { NextConfig } from "next";
 
+/**
+ * Fully static export (Cloudflare Pages): `npm run build` writes `out/`.
+ * Images are pre-optimised by `npm run images` (sharp) and served through
+ * <picture>, so the Next.js image optimiser is not needed at runtime.
+ */
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  images: {
-    formats: ["image/avif", "image/webp"],
-    qualities: [75, 85],
-    deviceSizes: [320, 430, 640, 768, 1024, 1440, 1920],
-  },
+  output: "export",
+  reactStrictMode: true,
+  poweredByHeader: false,
+  images: { unoptimized: true },
   turbopack: {
-    root: process.cwd(),
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
@@ -18,7 +18,6 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  outputFileTracingRoot: process.cwd(),
 };
 
 export default nextConfig;

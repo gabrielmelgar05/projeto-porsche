@@ -1,0 +1,5 @@
+# Cloudflare Pages — long cache for fingerprinted build assets and generated images.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=2592000

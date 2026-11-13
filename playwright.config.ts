@@ -1,29 +1,31 @@
-import { defineConfig } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test";
 
-const externalServer = process.env.QA_BASE_URL;
+/**
+ * End-to-end tests against the static export (`out/`), served the way
+ * Cloudflare Pages serves it. Uses the locally installed Google Chrome
+ * (channel "chrome") — no browser download needed.
+ *   npm run build && npm run test:e2e
+ */
 export default defineConfig({
-  testDir: "./tests",
+  testDir: "tests/e2e",
+  timeout: 45_000,
   fullyParallel: true,
-  timeout: 45000,
-  expect: { timeout: 8000 },
+  // The suite measures real animation timing; keep CPU contention moderate.
   workers: 3,
-  reporter: [["list"], ["json", { outputFile: "test-results/results.json" }]],
+  reporter: [["list"]],
   use: {
-    baseURL: externalServer || "http://127.0.0.1:43117",
-    headless: true,
-    launchOptions: {
-      executablePath:
-        process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined,
-    },
-    screenshot: "only-on-failure",
-    trace: "retain-on-failure",
+    baseURL: "http://localhost:4173",
+    channel: "chrome",
+    trace: "off",
   },
-  webServer: externalServer
-    ? undefined
-    : {
-        command: "npm run dev -- --hostname 127.0.0.1 --port 43117",
-        url: "http://127.0.0.1:43117",
-        reuseExistingServer: !process.env.CI,
-        timeout: 120000,
-      },
+  webServer: {
+    command: "npm run preview",
+    url: "http://localhost:4173",
+    reuseExistingServer: true,
+    timeout: 30_000,
+  },
+  projects: [
+    { name: "desktop", use: { viewport: { width: 1440, height: 900 } } },
+    { name: "mobile", use: { ...devices["Pixel 7"], channel: "chrome" } },
+  ],
 });

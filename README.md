@@ -1,140 +1,137 @@
-# AKLIO Studio — 911 GT3 RS
+# 911 GT3 RS — Concept Experience
 
-One-page automotiva editorial e interativa, criada do zero com Next.js 16.4.6, React 19, TypeScript, Tailwind CSS, GSAP, `@gsap/react`, `next-intl` e Lucide. Conceito independente, sem afiliação ou endosso da Porsche AG. Não há 3D, WebGL, backend ou banco de dados.
+An editorial, cinematic one-page experience for the Porsche 911 GT3 RS (992), designed and developed
+by **Aklio Studio** as an independent portfolio study.
 
-## Executar
+> Independent concept. Not affiliated with, endorsed by or associated with Porsche AG.
+> Porsche, 911 and GT3 RS are trademarks of Dr. Ing. h.c. F. Porsche AG.
 
-Requisitos: Node.js 20.9 ou superior e NPM. A implementação foi validada com Node.js 24.22.2.
+**Stack:** Next.js 16 (App Router, static export) · React 19 · TypeScript (strict) · Tailwind CSS 4 ·
+GSAP 3 + ScrollTrigger + `@gsap/react` · Lucide React · sharp (image pipeline) · Playwright (tests).
+No backend, no database, no server runtime.
 
-```bash
-npm ci
-npm run dev
-```
+---
 
-Abra o endereço impresso pelo Next.js, normalmente `http://localhost:3000`. Se já houver um servidor antigo aberto, reinicie-o para aplicar a configuração atual.
+## Quick start
 
-Para produção:
-
-```bash
-npm run build
-npm run start
-```
-
-Defina `NEXT_PUBLIC_SITE_URL=https://seu-dominio` no ambiente de build para que os metadados sociais usem o endereço de publicação. O fallback de desenvolvimento é `http://localhost:3000`. A implementação permanece neste repositório; não foi realizada publicação externa.
-
-## Experiência implementada
-
-1. **Preloader e hero:** identificação tipográfica, sequência GSAP breve, hero com `100svh`, composições próprias para desktop e mobile e CTA para o showroom.
-2. **The art of precision:** layout assimétrico, fotografia arquitetônica e tipografia editorial.
-3. **Showroom:** visualizador 2D, cinco perspectivas externas, quatro pinturas reais no catálogo, três vistas internas, navegação por setas, miniaturas e modal acessível.
-4. **Engineered to perform:** imagem escura, aerodinâmica e especificações do GT3 RS modelo 2024, com link para a fonte oficial.
-5. **Details that define it:** composição variável com fotografias de aerodinâmica, roda e carroceria.
-6. **Interior experience:** cockpit em grande escala, bancos e CTA que abre o interior no showroom.
-7. **Final showcase e rodapé:** encerramento cinematográfico, retorno ao showroom, crédito da AKLIO e identificação das imagens conceituais.
-
-Header fixo com âncoras, menu mobile, fechamento por Escape, contenção de foco e retorno ao botão de origem. EN/PT completos; inglês na primeira visita, escolha persistida em `localStorage`, atualização de `html[lang]` e alternativa em memória quando o armazenamento estiver bloqueado.
-
-## Showroom
-
-O catálogo tipado em `src/config/vehicle.ts` contém somente arquivos existentes:
-
-- **Pinturas:** Ice Grey Metallic, White, Black e Guards Red — opções visuais deste conceito, sem promessa de disponibilidade comercial.
-- **Perspectivas externas:** dianteira ¾, perfil lateral, traseira ¾, dianteira e traseira. São 20 combinações de imagem.
-- **Interior:** cockpit, bancos esportivos e detalhes. Um acabamento preto com costuras vermelhas.
-- **Rodas:** um acabamento preto acetinado. O card apresenta o equipamento efetivamente fotografado; não há opções falsas de troca.
-
-Trocar a pintura preserva a perspectiva. Entrar no interior preserva cor e último ângulo exterior. O retorno restaura esses dois valores. O CTA da seção editorial abre o cockpit sem desmontar o showroom.
-
-`VehicleImage` mantém a imagem anterior até a próxima ser carregada e decodificada. A troca usa duas camadas e crossfade curto; a limpeza do efeito impede que solicitações antigas sobrescrevam a seleção mais recente. Falhas apresentam mensagem traduzida e nova tentativa sem apagar o último quadro válido.
-
-O cache compartilhado armazena promessas por URL; erros são removidos para permitir retry. O visualizador é ativado próximo ao viewport. Pré-carregamento adicional limitado ao próximo ângulo e às opções focadas/apontadas. Miniaturas usam lazy loading. O conjunto completo de pinturas não é baixado ao abrir a página.
-
-O modal usa `<dialog>`, foco inicial, ciclo de Tab/Shift+Tab, Escape, setas de teclado e restauração de foco. A galeria principal também aceita setas quando focada.
-
-## Assets e origem
-
-Foram feitas **32 gerações/edições com a ferramenta integrada `image_gen`**, com **31 imagens finais mantidas** no repositório. Uma primeira hero mobile foi substituída após a revisão de enquadramento. As quatro pinturas derivam das mesmas cinco imagens cinzas; não há recoloração CSS.
-
-| Diretório                         | Quantidade | Finalidade                           |
-| --------------------------------- | ---------: | ------------------------------------ |
-| `public/assets/images/hero/`      |          2 | Hero desktop e hero mobile refinada  |
-| `public/assets/images/editorial/` |          3 | Precision, engenharia e encerramento |
-| `public/assets/images/details/`   |          3 | Aerofólio, roda e carroceria         |
-| `public/assets/images/interior/`  |          3 | Cockpit, bancos e detalhe interno    |
-| `public/assets/cars/gt3rs/`       |         20 | Quatro pinturas × cinco ângulos      |
-
-As imagens finais foram inspecionadas e comprimidas em WebP. O manifesto informa o tamanho medido de cada arquivo. São representações conceituais criadas com IA; pequenos detalhes de geometria, acabamentos e marca podem diferir do automóvel de produção. Não são fotografias oficiais.
-
-- [Manifesto completo dos assets](docs/generated-assets.json)
-- [Prompts e processo de produção](docs/image-prompts.md)
-- [Análise das cinco imagens, dois vídeos e páginas oficiais](docs/art-direction.md)
-
-As referências originais não são utilizadas na produção. Geist e Geist Mono são servidas localmente e sua licença SIL OFL está em `public/assets/fonts/OFL.txt`.
-
-## Movimento e responsividade
-
-GSAP controla a abertura, entrada sequencial da hero, reveals de texto, máscaras de imagem, stagger dos controles, entrada do showroom e parallax discreto no desktop. As animações têm escopo e cleanup com `useGSAP` e `gsap.matchMedia`. Redimensionar a janela não reinicia o preloader. Não há scroll hijacking, pinning ou espera artificial por todas as imagens.
-
-Com `prefers-reduced-motion`, o preloader e o movimento são dispensados e o conteúdo fica imediatamente disponível. Sem JavaScript, o conteúdo editorial inicial continua visível; os controles do showroom exigem JavaScript.
-
-No desktop o showroom tem visualizador e painel lateral. No tablet os cards passam para uma faixa; no telefone, a imagem, miniaturas roláveis e controles têm composição própria. A hero mobile usa fotografia com espaço de segurança para recorte. As seções editoriais têm alturas proporcionais ao conteúdo e o header respeita os destinos das âncoras.
-
-## Performance
-
-- `next/image`, dimensões ou contêineres com proporção definida e `sizes` responsivos.
-- WebP local e negociação AVIF/WebP no otimizador do Next.js.
-- Hero antecipada; imagens editoriais e miniaturas com carregamento preguiçoso.
-- Showroom com WebP já otimizado, `next/image unoptimized` e cache de decodificação: o preload e a imagem exibida usam a mesma URL, sem download duplicado entre original e variante otimizada.
-- Fontes locais, sem dependência de requisição externa no build ou na visita.
-- Nenhuma biblioteca de estado global; animações priorizam transform/opacity e reduzem custo no mobile.
-- Página inicial pré-renderizada estaticamente pelo Next.js.
-
-Não foram atribuídos scores de Lighthouse nem valores de LCP, CLS ou INP sem medição.
-
-## Verificação
+Requires **Node.js ≥ 22.18** and npm.
 
 ```bash
-npm run typecheck
-npm run lint
-npm run check:assets
-npm run build
+npm ci          # install exactly what package-lock.json specifies
+npm run dev     # http://localhost:3000
 ```
-
-A suíte de navegador usa Playwright e axe-core:
 
 ```bash
-npx playwright install chromium
-npm run test:e2e
+npm run build   # static export → out/
+npm run preview # serve out/ locally on http://localhost:4173
 ```
 
-Para testar um servidor de produção já iniciado:
+| Script | What it does |
+|---|---|
+| `dev` | Development server |
+| `build` | Type-checks and exports the static site to `out/` |
+| `preview` | Serves `out/` like a static host |
+| `lint` / `typecheck` / `format` | ESLint · `tsc --noEmit` · Prettier |
+| `images` | Optimises masters in `assets-src/` → AVIF/WebP in `public/images/` |
+| `brand` | Regenerates the GT3 RS signature, OG card and touch icon |
+| `test:e2e` | Playwright end-to-end tests against `out/` (uses installed Google Chrome) |
+| `check` | lint + typecheck + build + e2e |
 
-```bash
-QA_BASE_URL=http://127.0.0.1:3000 npm run test:e2e
+## Structure
+
+```
+public/
+  brand/gt3rs-performance-mark.svg   original concept signature (generated)
+  icons/                             provisional neutral favicon + touch icon
+  images/<section>/                  generated photo variants (after `npm run images`)
+  og.png, _headers                   social card, Cloudflare cache headers
+assets-src/images/<section>/         photo masters (not deployed)
+src/
+  app/                layout (fonts, metadata, boot script), page, globals.css (tokens)
+  components/
+    brand/            PerformanceMark (SVG + timeline), Wordmark, mark-geometry (generated)
+    preloader/        cinematic opening
+    layout/           Header, MobileMenu, LanguageToggle, Footer, SkipLink, Runtime
+    sections/         Hero, Precision, Aerodynamics, ShowroomSection, HotspotsSection,
+                      Performance, Interior, Finale
+    showroom/         Showroom (stage, thumbnails, controls), PaintSelector
+    hotspots/         HotspotScene (tabs + markers), HotspotPanel (detail dialog)
+    ui/               ArtImage, ImageFallback, CtaLink, Eyebrow, Split (Chars / Words)
+  data/               image-assets, gallery, hotspots, specifications, brand, site
+  hooks/              use-scroll-lock, use-swipe
+  lib/animations/     gsap setup + tokens, preloader→hero hand-off
+  lib/i18n/           en.ts (source), pt.ts, store, use-i18n, format
+  types/
+scripts/              generate-mark, optimize-images, list-images, build-social, serve-static
+tests/e2e/            Playwright specs
+docs/                 CODEX_IMAGE_ASSETS.md · DESIGN_SYSTEM.md · MOTION_GUIDELINES.md
 ```
 
-Se for usado um Chrome já instalado, `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` aceita o caminho do executável. Isso é opcional e não é usado pela aplicação.
+## Sections
 
-São 28 cenários, incluindo oito larguras (320, 375, 390, 430, 768, 1024, 1440 e 1920 px) em EN/PT, vinte combinações externas, interior, fullscreen, teclado, preferência de idioma, cliques concorrentes, erro/retry de imagem, carregamento seletivo, reduced motion, conteúdo sem JS e auditoria automatizada WCAG 2.2 AA. Resultados efetivamente executados constam em [docs/validation.md](docs/validation.md).
+| # | Section | Highlights |
+|---|---|---|
+| 00 | Preloader | GT3 RS signature drawn path by path, fill, red stripe, travelling yellow glint, panels part into the hero |
+| 01 | Hero | Three depth layers: backdrop · giant "PORSCHE" · car cut-out; headline left, lede + link right, spec cards; coordinated entrance and layered scroll exit |
+| 02 | Precision in motion | Desktop pinned scene: three photographs replace each other through masks with three chapters |
+| 03 | Aerodynamics | Wing frame with scroll-drawn illustrative airflow (labelled as such), verified facts, 860 kg figure |
+| 04 | Interactive showroom | 5 views, thumbnails, prev/next, ←/→, swipe, live announcements, paint architecture (white / black) |
+| 05 | Details (hotspots) | 3 viewpoints, 7 markers anchored to the image, complete list, editorial detail dialog |
+| 06 | Performance | Large figures climbing digit by digit, track band |
+| 07 | Interior | Pinned horizontal journey through the cabin (native scroller on mobile) |
+| 08 | Final | Signature drawn and rewound with the scroll, aperture-revealed photograph, CTAs, credits, footer |
 
-## Organização
+Technical figures come only from Porsche's 2022 world-premiere release (`src/data/specifications.ts`).
 
-```text
-src/app/                       App Router, metadados, fontes e estilos
-src/components/sections/       Seções editoriais
-src/components/showroom/       Galeria, cores, interior, imagem e modal
-src/components/layout/         Navegação e idioma
-src/components/animations/     Orquestração GSAP / ScrollTrigger
-src/config/vehicle.ts          Catálogo tipado
-src/i18n/ + src/messages/      Provider next-intl e mensagens EN/PT
-src/hooks/use-dialog.ts        Foco, scroll lock e ciclo de teclado
-src/lib/image-cache.ts         Preload e cache de imagens
-public/assets/                 Imagens e fontes efetivamente utilizadas
-tests/                        Cenários de navegador
-scripts/check-assets.mjs       Integridade dos assets e traduções
-docs/                         Referências, geração e validação
-```
+## How the animations work
 
-## Expansões que dependem de novos assets
+- `useGSAP` everywhere (scoped, auto-cleanup), `gsap.matchMedia()` for desktop / mobile /
+  reduced-motion variants; pins only on desktop (Precision, Interior).
+- The preloader builds its timeline with `buildMarkTimeline()` (stroke-dash drawing, clip-path fill,
+  masked stripes, animated gradient) and hands over to the hero through `lib/animations/intro.ts`.
+- Safety: scroll locked only during the opening; 7 s timer-based hard stop; CSS failsafe; no
+  preloader without JavaScript; shorter on repeat visits; fade-only with reduced motion.
+- Full timings and rules: **docs/MOTION_GUIDELINES.md**.
 
-A troca de rodas e de estofamento exige novas matrizes fotográficas coerentes. Essas variantes não são expostas na interface atual. Para ampliar o catálogo, produza e revise os arquivos correspondentes antes de adicionar estados e controles.
+## Languages
+
+English by default (the browser language is not used). `EN | PT` switches instantly without a reload,
+is saved in `localStorage`, updates `<html lang>`, title and description, and never replays the opening.
+Dictionaries: `src/lib/i18n/en.ts` (source of the `Dictionary` type) and `pt.ts` — a missing key is a
+type error.
+
+## Adding the photographs
+
+No final photography is included. Every slot shows an elegant "Image pending" placeholder.
+
+1. Read **docs/CODEX_IMAGE_ASSETS.md** (inventory, sizes, prompts, consistency rules, hotspots).
+2. Save masters as `assets-src/images/<section>/<name>.png`.
+3. Run `npm run images` — slots switch to the photographs automatically.
+4. Adjust hotspot positions in `src/data/hotspots.ts` if needed, then `npm run check`.
+
+The navbar logo is the original GT3 RS concept signature. The crest favicon is wired but switched
+off until a licensed file is supplied — see section 9 of the image brief.
+
+## Deploying to Cloudflare Pages
+
+The site is a fully static export.
+
+| Setting | Value |
+|---|---|
+| Framework preset | None (or "Next.js (Static HTML Export)") |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Environment variables | `NODE_VERSION=22`, optionally `NEXT_PUBLIC_SITE_URL=https://your-domain` |
+
+`public/_headers` sets long-term caching for `/_next/static/*` and `/images/*`.
+Or deploy from the command line: `npm run build && npx wrangler pages deploy out`.
+
+## Tests
+
+`npm run build && npm run test:e2e` runs against the exported site on desktop (1440×900) and mobile
+(Pixel 7): preloader (drawing, timing, repeat, skip, reduced motion), language switching and
+persistence, showroom (buttons, keyboard, thumbnails, paint availability, no broken images),
+hotspots (dialog, navigation, Escape, focus return, list, tab keys), navigation (mobile menu),
+finale signature (draws, rewinds, redraws with the scroll), navbar logo, no numbered markers,
+layout at 320–1920 px in EN and PT (no horizontal overflow, full-height hero, text ≥ 13 px) and
+static-export output. `CAPTURE=1 npx playwright test visual` records review screenshots in `.visual/`.

@@ -1,0 +1,67 @@
+import type { Metadata, Viewport } from "next";
+import { Archivo, Inter } from "next/font/google";
+import { site } from "@/data/site";
+import { en } from "@/lib/i18n/en";
+import { bootScript } from "@/lib/i18n/store";
+import "./globals.css";
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin", "latin-ext"],
+  axes: ["wdth"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: en.meta.title,
+  description: en.meta.description,
+  applicationName: site.name,
+  creator: site.studio,
+  icons: {
+    // Provisional neutral icon. The licensed crest replaces these files (docs/CODEX_IMAGE_ASSETS.md).
+    icon: [{ url: "/icons/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: site.name,
+    title: en.meta.title,
+    description: en.meta.description,
+    locale: "en_US",
+    alternateLocale: ["pt_BR"],
+    images: [
+      { url: "/og.png", width: 1200, height: 630, alt: "911 GT3 RS — concept experience by Aklio Studio" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: en.meta.title,
+    description: en.meta.description,
+    images: ["/og.png"],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  viewportFit: "cover",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="en" className={`${archivo.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* JS flag, saved language and repeat-visit flag — applied before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}

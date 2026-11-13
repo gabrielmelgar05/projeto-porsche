@@ -1,0 +1,6 @@
+.next
+out
+node_modules
+src/components/brand/mark-geometry.ts
+scripts/expected-images.json
+src/data/generated

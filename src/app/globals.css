@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   GT3 RS — design tokens (see docs/DESIGN_SYSTEM.md)
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  --color-paper: #f3f2ee; /* off-white */
+  --color-mineral: #fafaf7; /* mineral white */
+  --color-concrete: #d9d7d1; /* concrete grey — surfaces, lines */
+  --color-concrete-deep: #a7a49d; /* concrete on dark — secondary text */
+  --color-stone: #5c5a55; /* secondary text on light */
+  --color-graphite: #1d1d1d; /* graphite black */
+  --color-ink: #0a0a0a; /* deep black */
+  --color-red: #c8102e; /* performance red */
+  --color-signal: #f2b705; /* signature yellow — mark only */
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --breakpoint-xs: 23.4375rem; /* 375 */
+  --breakpoint-3xl: 112.5rem; /* 1800 */
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --gap: clamp(1rem, 2vw, 2rem);
+  --header-h: 4.25rem;
+  --section-pad: clamp(5.5rem, 12vh, 10rem);
+  --radius: 0.375rem;
+  --frame-max: 100rem;
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
+/* ═══ Base ════════════════════════════════════════════════════════ */
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Locking scroll (preloader, menu, dialog) keeps the layout width. */
+    scrollbar-gutter: stable;
+    overflow-x: clip;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-red);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--color-red);
+    color: #fff;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  dialog {
+    max-width: none;
+    max-height: none;
+  }
+}
+
+/* Accent text: performance red on light grounds, a brighter red on dark
+   ones so small labels keep ≥ 4.5:1 contrast. */
+:root {
+  --accent-text: var(--color-red);
+}
+[data-tone="dark"],
+[data-surface="dark"] {
+  --accent-text: #ff4d5e;
+}
+[data-surface="light"] {
+  --accent-text: var(--color-red);
+}
+
+@utility text-accent {
+  color: var(--accent-text);
+}
+
+/* ═══ Layout utilities ════════════════════════════════════════════ */
+
+@utility frame {
+  width: 100%;
+  max-width: var(--frame-max);
+  margin-inline: auto;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left));
+}
+
+@utility section-pad {
+  padding-block: var(--section-pad);
+}
+
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--gap);
+
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  @media (min-width: 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+@utility min-h-screen-safe {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+@utility h-screen-safe {
+  height: 100vh;
+  height: 100svh;
+}
+
+/* ═══ Typography ══════════════════════════════════════════════════ */
+
+/* Monumental model name — extended, heavy, uppercase. */
+@utility t-monument {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.84;
+  letter-spacing: -0.035em;
+  font-size: clamp(3.5rem, 17.5vw, 7rem);
+
+  @media (min-width: 48rem) {
+    font-size: clamp(5rem, 12.6vw, 15.5rem);
+  }
+}
+
+/* Section headline — editorial, sentence case, wide. */
+@utility t-headline {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-size: clamp(2.25rem, 6.4vw, 6.25rem);
+}
+
+@utility t-title {
+  font-family: var(--font-display);
+  font-stretch: 108%;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.375rem, 2.2vw, 2rem);
+}
+
+/* Large figures. */
+@utility t-figure {
+  font-family: var(--font-display);
+  font-stretch: 118%;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(4rem, 15vw, 13rem);
+}
+
+@utility t-lede {
+  font-size: clamp(1.125rem, 1.45vw, 1.375rem);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+@utility t-body {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Labels: never below 13px. */
+@utility t-label {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ═══ Components ══════════════════════════════════════════════════ */
+
+@layer components {
+  /* Masks for text reveals (React renders the pieces, GSAP moves them). */
+  .mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.08em;
+    margin-bottom: -0.08em;
+  }
+  .mask > * {
+    display: inline-block;
+  }
+
+  /* Underline sweep for text links. */
+  .sweep {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  @media (hover: hover) {
+    .sweep:hover {
+      background-size: 100% 1px;
+    }
+  }
+  .sweep[aria-current="true"] {
+    background-size: 100% 1px;
+  }
+
+  /* Hotspot marker pulse — a single ring, paused for reduced motion. */
+  /* Three pulses to signal interactivity, then still. */
+  .hotspot-ring {
+    animation: hotspot-ring 2.6s var(--ease-out-expo) 1s 3 both;
+  }
+}
+
+@keyframes hotspot-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  70%,
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* ═══ Preloader availability ═════════════════════════════════════
+   Visible only once the inline boot script marks <html class="js">.
+   CSS failsafe hides it if the app never takes control.            */
+
+.preloader {
+  display: none;
+}
+.js .preloader {
+  display: block;
+  animation: preloader-failsafe 0.5s linear 7s forwards;
+}
+.js .preloader[data-state="running"] {
+  animation: none;
+}
+.preloader[data-state="done"] {
+  display: none;
+}
+
+@keyframes preloader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ═══ Reduced motion ═════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

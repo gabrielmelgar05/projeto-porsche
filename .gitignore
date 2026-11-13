@@ -12,8 +12,6 @@
 
 # testing
 /coverage
-/test-results/
-/playwright-report/
 
 # next.js
 /.next/
@@ -41,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# visual captures / playwright
+.visual/
+/test-results/
+/playwright-report/
