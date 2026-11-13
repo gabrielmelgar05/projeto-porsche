@@ -23,7 +23,7 @@ npm run dev     # http://localhost:3000
 
 ```bash
 npm run build   # static export → out/
-npm run preview # serve out/ locally on http://localhost:4173
+npm run preview # serve out/ locally on http://localhost:4173 (Brotli/gzip for text)
 ```
 
 | Script | What it does |
@@ -33,6 +33,7 @@ npm run preview # serve out/ locally on http://localhost:4173
 | `preview` | Serves `out/` like a static host |
 | `lint` / `typecheck` / `format` | ESLint · `tsc --noEmit` · Prettier |
 | `images` | Optimises masters in `assets-src/` → AVIF/WebP in `public/images/` |
+| `images:audit` | Checks native dimensions, decoded outputs, alpha and provenance; writes the asset report |
 | `brand` | Regenerates the GT3 RS signature, OG card and touch icon |
 | `test:e2e` | Playwright end-to-end tests against `out/` (uses installed Google Chrome) |
 | `check` | lint + typecheck + build + e2e |
@@ -102,11 +103,15 @@ type error.
 
 ## Adding the photographs
 
-No final photography is included. Every slot shows an elegant "Image pending" placeholder.
+The essential campaign is integrated: 28 original generated PNG masters feed 26 image entries,
+including the Hero and Finale mobile compositions. The optional five-view black showroom set is
+still pending and disabled. See `docs/CODEX_IMAGE_ASSETS.md` for native-resolution limits, provenance
+and the full integration/review record.
 
 1. Read **docs/CODEX_IMAGE_ASSETS.md** (inventory, sizes, prompts, consistency rules, hotspots).
 2. Save masters as `assets-src/images/<section>/<name>.png`.
-3. Run `npm run images` — slots switch to the photographs automatically.
+3. Run `npm run images` — slots switch to the photographs automatically. Then `npm run images:audit`
+   validates decoded outputs and writes `docs/IMAGE_ASSET_REPORT.json`.
 4. Adjust hotspot positions in `src/data/hotspots.ts` if needed, then `npm run check`.
 
 The navbar logo is the original GT3 RS concept signature. The crest favicon is wired but switched

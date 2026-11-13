@@ -24,6 +24,7 @@ export function Showroom() {
   const { t } = useI18n();
   const stage = useRef<HTMLDivElement>(null);
   const counter = useRef(0);
+  const visibleKey = useRef(0);
   const [layers, setLayers] = useState<Layer[]>([{ key: 0, index: 0, paint: "white", direction: 0 }]);
   const [announcement, setAnnouncement] = useState("");
 
@@ -36,7 +37,8 @@ export function Showroom() {
         const top = previous[previous.length - 1]!;
         if (top.index === index && top.paint === paint) return previous;
         counter.current += 1;
-        return [...previous.slice(-1), { key: counter.current, index, paint, direction }];
+        const visible = previous.find((layer) => layer.key === visibleKey.current) ?? previous[0]!;
+        return [visible, { key: counter.current, index, paint, direction }];
       });
       setAnnouncement(
         fill(t.showroom.announce, {
@@ -61,41 +63,63 @@ export function Showroom() {
 
   // Transition between the outgoing and incoming layers.
   useGSAP(
-    () => {
+    (context) => {
       if (layers.length < 2) return;
       const [outgoing, incoming] = layers;
       const q = gsap.utils.selector(stage);
       const outEl = q(`[data-layer="${outgoing!.key}"]`)[0];
       const inEl = q(`[data-layer="${incoming!.key}"]`)[0];
       if (!outEl || !inEl) return;
-      const done = () => setLayers((previous) => previous.filter((layer) => layer.key !== outgoing!.key));
-
-      if (reducedMotion() || incoming!.direction === 0) {
-        gsap.fromTo(
-          inEl,
-          { autoAlpha: 0 },
-          { autoAlpha: 1, duration: reducedMotion() ? 0.15 : 0.5, ease: "none", onComplete: done },
-        );
-        return;
+      let cancelled = false;
+      const done = () => {
+        visibleKey.current = incoming!.key;
+        setLayers((previous) => previous.filter((layer) => layer.key !== outgoing!.key));
+      };
+      // Keep the last completed view visible even during slow loads or rapid navigation.
+      gsap.set(inEl, { autoAlpha: 0 });
+      const reveal = () => {
+        if (cancelled || !inEl.isConnected) return;
+        // Async decoding must still create animations inside the scoped GSAP context.
+        context.add(() => {
+          if (reducedMotion() || incoming!.direction === 0) {
+            gsap.fromTo(
+              inEl,
+              { autoAlpha: 0 },
+              { autoAlpha: 1, duration: reducedMotion() ? 0.15 : 0.5, ease: "none", onComplete: done },
+            );
+            return;
+          }
+          const dir = incoming!.direction;
+          gsap.set(inEl, { autoAlpha: 1 });
+          gsap.fromTo(
+            inEl,
+            { clipPath: dir > 0 ? "inset(0% 0% 0% 100%)" : "inset(0% 100% 0% 0%)" },
+            { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: EASE.curtain, onComplete: done },
+          );
+          gsap.fromTo(
+            inEl.querySelector("[data-layer-inner]"),
+            { scale: 1.08, xPercent: 4 * dir },
+            { scale: 1, xPercent: 0, duration: 1.2, ease: EASE.reveal },
+          );
+          gsap.to(outEl.querySelector("[data-layer-inner]"), {
+            xPercent: -6 * dir,
+            duration: 0.9,
+            ease: EASE.curtain,
+          });
+        });
+      };
+      const photograph = inEl.querySelector<HTMLImageElement>("img");
+      if (photograph) {
+        photograph.loading = "eager";
+        void photograph.decode().then(reveal, reveal);
+      } else {
+        reveal();
       }
-      const dir = incoming!.direction;
-      gsap.fromTo(
-        inEl,
-        { clipPath: dir > 0 ? "inset(0% 0% 0% 100%)" : "inset(0% 100% 0% 0%)" },
-        { clipPath: "inset(0% 0% 0% 0%)", duration: 0.9, ease: EASE.curtain, onComplete: done },
-      );
-      gsap.fromTo(
-        inEl.querySelector("[data-layer-inner]"),
-        { scale: 1.08, xPercent: 4 * dir },
-        { scale: 1, xPercent: 0, duration: 1.2, ease: EASE.reveal },
-      );
-      gsap.to(outEl.querySelector("[data-layer-inner]"), {
-        xPercent: -6 * dir,
-        duration: 0.9,
-        ease: EASE.curtain,
-      });
+      return () => {
+        cancelled = true;
+      };
     },
-    { scope: stage, dependencies: [layers] },
+    { scope: stage, dependencies: [layers], revertOnUpdate: true },
   );
 
   return (

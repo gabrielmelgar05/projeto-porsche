@@ -3,195 +3,186 @@
     "id": "heroBackdrop",
     "dir": "hero",
     "name": "gt3rs-hero-backdrop",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ],
     "mobile": {
       "name": "gt3rs-hero-backdrop-portrait",
-      "width": 1080,
-      "height": 1920
+      "width": 941,
+      "height": 1672
     }
   },
   {
     "id": "heroCar",
     "dir": "hero",
     "name": "gt3rs-hero-car",
-    "width": 2400,
-    "height": 960,
+    "width": 1983,
+    "height": 793,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1920
     ]
   },
   {
     "id": "precisionSide",
     "dir": "precision",
     "name": "gt3rs-precision-side",
-    "width": 2560,
-    "height": 1600,
+    "width": 1586,
+    "height": 992,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1586
     ]
   },
   {
     "id": "precisionBrake",
     "dir": "precision",
     "name": "gt3rs-precision-brake",
-    "width": 2560,
-    "height": 1600,
+    "width": 1586,
+    "height": 992,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1586
     ]
   },
   {
     "id": "precisionWing",
     "dir": "precision",
     "name": "gt3rs-precision-wing",
-    "width": 2560,
-    "height": 1600,
+    "width": 1586,
+    "height": 992,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1586
     ]
   },
   {
     "id": "aeroWing",
     "dir": "aerodynamics",
     "name": "gt3rs-aero-rear-wing",
-    "width": 2560,
-    "height": 1600,
+    "width": 1586,
+    "height": 992,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1586
     ]
   },
   {
     "id": "aeroSplitter",
     "dir": "aerodynamics",
     "name": "gt3rs-aero-splitter",
-    "width": 1440,
-    "height": 1800,
+    "width": 1122,
+    "height": 1402,
     "widths": [
       480,
       960,
-      1440
+      1122
     ]
   },
   {
     "id": "aeroCarbon",
     "dir": "aerodynamics",
     "name": "gt3rs-aero-carbon",
-    "width": 1440,
-    "height": 1800,
+    "width": 1122,
+    "height": 1402,
     "widths": [
       480,
       960,
-      1440
+      1122
     ]
   },
   {
     "id": "performanceTrack",
     "dir": "performance",
     "name": "gt3rs-performance-track",
-    "width": 2560,
-    "height": 1097,
+    "width": 1885,
+    "height": 834,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1885
     ]
   },
   {
     "id": "interiorCockpit",
     "dir": "interior",
     "name": "gt3rs-interior-cockpit",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "interiorWheel",
     "dir": "interior",
     "name": "gt3rs-interior-wheel",
-    "width": 1440,
-    "height": 1800,
+    "width": 1122,
+    "height": 1402,
     "widths": [
       480,
       960,
-      1440
+      1122
     ]
   },
   {
     "id": "interiorSeats",
     "dir": "interior",
     "name": "gt3rs-interior-seats",
-    "width": 1440,
-    "height": 1800,
+    "width": 1122,
+    "height": 1402,
     "widths": [
       480,
       960,
-      1440
+      1122
     ]
   },
   {
     "id": "interiorClubsport",
     "dir": "interior",
     "name": "gt3rs-interior-clubsport",
-    "width": 1440,
-    "height": 1800,
+    "width": 1122,
+    "height": 1402,
     "widths": [
       480,
       960,
-      1440
+      1122
     ]
   },
   {
     "id": "finaleRear",
     "dir": "finale",
     "name": "gt3rs-finale-rear34",
-    "width": 2560,
-    "height": 1097,
+    "width": 1914,
+    "height": 822,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1914
     ],
     "mobile": {
       "name": "gt3rs-finale-rear34-portrait",
-      "width": 1080,
-      "height": 1440
+      "width": 1086,
+      "height": 1448
     }
   },
   {
     "id": "detailRearWing",
     "dir": "details",
     "name": "gt3rs-detail-rear-wing",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -202,8 +193,8 @@
     "id": "detailFrontAero",
     "dir": "details",
     "name": "gt3rs-detail-front-aero",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -214,8 +205,8 @@
     "id": "detailWheel",
     "dir": "details",
     "name": "gt3rs-detail-wheel",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -226,8 +217,8 @@
     "id": "detailCarbon",
     "dir": "details",
     "name": "gt3rs-detail-carbon",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -238,8 +229,8 @@
     "id": "detailDiffuser",
     "dir": "details",
     "name": "gt3rs-detail-diffuser",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -250,8 +241,8 @@
     "id": "detailCockpit",
     "dir": "details",
     "name": "gt3rs-detail-cockpit",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -262,8 +253,8 @@
     "id": "detailSeat",
     "dir": "details",
     "name": "gt3rs-detail-seat",
-    "width": 1600,
-    "height": 1067,
+    "width": 1536,
+    "height": 1024,
     "widths": [
       480,
       960,
@@ -274,130 +265,120 @@
     "id": "showroom-white-front34",
     "dir": "showroom",
     "name": "gt3rs-white-front34",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-white-side",
     "dir": "showroom",
     "name": "gt3rs-white-side",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-white-rear34",
     "dir": "showroom",
     "name": "gt3rs-white-rear34",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-white-front",
     "dir": "showroom",
     "name": "gt3rs-white-front",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-white-rear",
     "dir": "showroom",
     "name": "gt3rs-white-rear",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-black-front34",
     "dir": "showroom",
     "name": "gt3rs-black-front34",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-black-side",
     "dir": "showroom",
     "name": "gt3rs-black-side",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-black-rear34",
     "dir": "showroom",
     "name": "gt3rs-black-rear34",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-black-front",
     "dir": "showroom",
     "name": "gt3rs-black-front",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   },
   {
     "id": "showroom-black-rear",
     "dir": "showroom",
     "name": "gt3rs-black-rear",
-    "width": 2560,
-    "height": 1440,
+    "width": 1672,
+    "height": 941,
     "widths": [
       640,
       1280,
-      1920,
-      2560
+      1672
     ]
   }
 ]

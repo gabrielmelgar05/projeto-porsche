@@ -1,0 +1,1714 @@
+{
+  "date": "2026-11-13",
+  "generator": "Built-in image_gen; no API/CLI or paid third-party service used",
+  "totals": {
+    "manifestEntries": 31,
+    "sourceFiles": 28,
+    "integratedEntries": 26,
+    "pendingOptionalEntries": 5,
+    "outputFiles": 166,
+    "masterBytes": 59393071,
+    "outputBytes": 6209036
+  },
+  "checks": {
+    "nativeDimensions": true,
+    "noUpscaling": true,
+    "noDuplicateMasters": true,
+    "allOutputsDecoded": true,
+    "heroAlphaPreserved": true,
+    "provenanceComplete": true
+  },
+  "pending": [
+    {
+      "id": "showroom-black-front34",
+      "master": "assets-src/images/showroom/gt3rs-black-front34.png",
+      "optional": true
+    },
+    {
+      "id": "showroom-black-side",
+      "master": "assets-src/images/showroom/gt3rs-black-side.png",
+      "optional": true
+    },
+    {
+      "id": "showroom-black-rear34",
+      "master": "assets-src/images/showroom/gt3rs-black-rear34.png",
+      "optional": true
+    },
+    {
+      "id": "showroom-black-front",
+      "master": "assets-src/images/showroom/gt3rs-black-front.png",
+      "optional": true
+    },
+    {
+      "id": "showroom-black-rear",
+      "master": "assets-src/images/showroom/gt3rs-black-rear.png",
+      "optional": true
+    }
+  ],
+  "masters": [
+    {
+      "id": "heroBackdrop",
+      "path": "assets-src/images/hero/gt3rs-hero-backdrop.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2103953,
+      "alpha": false,
+      "sha256": "a786c78ba7cfdf9aac7b85c3f5778d1995b035fbab1973d4714065f216193675",
+      "outputs": [
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 4641,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 5342,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 18944,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 22958,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 36006,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 40256,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "heroBackdrop",
+      "path": "assets-src/images/hero/gt3rs-hero-backdrop-portrait.png",
+      "format": "png",
+      "width": 941,
+      "height": 1672,
+      "bytes": 2063197,
+      "alpha": false,
+      "sha256": "0cdf6208e17f928352ad6d156b7adbc1fb4079d5b89b84207901f064e899a412",
+      "outputs": [
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 853,
+          "bytes": 5607,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 853,
+          "bytes": 7262,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-828.avif",
+          "format": "avif",
+          "width": 828,
+          "height": 1471,
+          "bytes": 21838,
+          "alpha": false
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-828.webp",
+          "format": "webp",
+          "width": 828,
+          "height": 1471,
+          "bytes": 26238,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "heroCar",
+      "path": "assets-src/images/hero/gt3rs-hero-car.png",
+      "format": "png",
+      "width": 1983,
+      "height": 793,
+      "bytes": 1719031,
+      "alpha": true,
+      "sha256": "117baa13dc9e706253986c4ab23c41683007f1942eb8bed70eba9abdae049e8b",
+      "outputs": [
+        {
+          "path": "public/images/hero/gt3rs-hero-car-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 256,
+          "bytes": 17109,
+          "alpha": true
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-car-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 256,
+          "bytes": 31594,
+          "alpha": true
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-car-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 512,
+          "bytes": 45119,
+          "alpha": true
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-car-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 512,
+          "bytes": 86156,
+          "alpha": true
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-car-1920.avif",
+          "format": "avif",
+          "width": 1920,
+          "height": 768,
+          "bytes": 77109,
+          "alpha": true
+        },
+        {
+          "path": "public/images/hero/gt3rs-hero-car-1920.webp",
+          "format": "webp",
+          "width": 1920,
+          "height": 768,
+          "bytes": 153412,
+          "alpha": true
+        }
+      ]
+    },
+    {
+      "id": "precisionSide",
+      "path": "assets-src/images/precision/gt3rs-precision-side.png",
+      "format": "png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2129445,
+      "alpha": false,
+      "sha256": "f43ca6c1d7f982b01a53157fcb187bf87b1b6536d3b994e66bc17fd4e4429245",
+      "outputs": [
+        {
+          "path": "public/images/precision/gt3rs-precision-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 400,
+          "bytes": 6624,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 9754,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 801,
+          "bytes": 23407,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 801,
+          "bytes": 34702,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-side-1586.avif",
+          "format": "avif",
+          "width": 1586,
+          "height": 992,
+          "bytes": 37170,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-side-1586.webp",
+          "format": "webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 49278,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "precisionBrake",
+      "path": "assets-src/images/precision/gt3rs-precision-brake.png",
+      "format": "png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2322406,
+      "alpha": false,
+      "sha256": "95c6a967bbe551299c42109bdf695a1070317395b6949b6feef9f36c56742cb0",
+      "outputs": [
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 400,
+          "bytes": 15119,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 24894,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 801,
+          "bytes": 46981,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 801,
+          "bytes": 74462,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-1586.avif",
+          "format": "avif",
+          "width": 1586,
+          "height": 992,
+          "bytes": 65148,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-brake-1586.webp",
+          "format": "webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 101984,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "precisionWing",
+      "path": "assets-src/images/precision/gt3rs-precision-wing.png",
+      "format": "png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 1952183,
+      "alpha": false,
+      "sha256": "62c4115e6b6889eb0fb67a7544dc3d13f29b0a0f10550aa78ba0442ac37c4fcb",
+      "outputs": [
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 400,
+          "bytes": 8571,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 13954,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 801,
+          "bytes": 26346,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 801,
+          "bytes": 44492,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-1586.avif",
+          "format": "avif",
+          "width": 1586,
+          "height": 992,
+          "bytes": 36280,
+          "alpha": false
+        },
+        {
+          "path": "public/images/precision/gt3rs-precision-wing-1586.webp",
+          "format": "webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 62640,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "aeroWing",
+      "path": "assets-src/images/aerodynamics/gt3rs-aero-rear-wing.png",
+      "format": "png",
+      "width": 1586,
+      "height": 992,
+      "bytes": 2119928,
+      "alpha": false,
+      "sha256": "d5b8fa8327651726a950a0b8c0f8ea65c80c08c1831b60f67c55ca8021a1d94e",
+      "outputs": [
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 400,
+          "bytes": 10341,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 400,
+          "bytes": 17318,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 801,
+          "bytes": 32453,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 801,
+          "bytes": 54192,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-1586.avif",
+          "format": "avif",
+          "width": 1586,
+          "height": 992,
+          "bytes": 45194,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-rear-wing-1586.webp",
+          "format": "webp",
+          "width": 1586,
+          "height": 992,
+          "bytes": 75610,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "aeroSplitter",
+      "path": "assets-src/images/aerodynamics/gt3rs-aero-splitter.png",
+      "format": "png",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2216437,
+      "alpha": false,
+      "sha256": "6865b32441af2243d99dc8d2b6db7400c97d009060919c23f54fee210612a22c",
+      "outputs": [
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 11676,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 19924,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 38671,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 65760,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-1122.avif",
+          "format": "avif",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 49841,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-splitter-1122.webp",
+          "format": "webp",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 85260,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "aeroCarbon",
+      "path": "assets-src/images/aerodynamics/gt3rs-aero-carbon.png",
+      "format": "png",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2570967,
+      "alpha": false,
+      "sha256": "ef2591163c35f49f97ca33e012fc55b7f7566ca08cba8e056105e4336af357da",
+      "outputs": [
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 17271,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 34196,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 55668,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 103532,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-1122.avif",
+          "format": "avif",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 69847,
+          "alpha": false
+        },
+        {
+          "path": "public/images/aerodynamics/gt3rs-aero-carbon-1122.webp",
+          "format": "webp",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 126656,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "performanceTrack",
+      "path": "assets-src/images/performance/gt3rs-performance-track.png",
+      "format": "png",
+      "width": 1885,
+      "height": 834,
+      "bytes": 1838128,
+      "alpha": false,
+      "sha256": "816093230479aa3b3e39f762a06e5d22c959e0d4ce547b41c9876ad97534ea35",
+      "outputs": [
+        {
+          "path": "public/images/performance/gt3rs-performance-track-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 283,
+          "bytes": 8693,
+          "alpha": false
+        },
+        {
+          "path": "public/images/performance/gt3rs-performance-track-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 283,
+          "bytes": 14544,
+          "alpha": false
+        },
+        {
+          "path": "public/images/performance/gt3rs-performance-track-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 566,
+          "bytes": 24249,
+          "alpha": false
+        },
+        {
+          "path": "public/images/performance/gt3rs-performance-track-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 566,
+          "bytes": 40232,
+          "alpha": false
+        },
+        {
+          "path": "public/images/performance/gt3rs-performance-track-1885.avif",
+          "format": "avif",
+          "width": 1885,
+          "height": 834,
+          "bytes": 40638,
+          "alpha": false
+        },
+        {
+          "path": "public/images/performance/gt3rs-performance-track-1885.webp",
+          "format": "webp",
+          "width": 1885,
+          "height": 834,
+          "bytes": 68460,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "interiorCockpit",
+      "path": "assets-src/images/interior/gt3rs-interior-cockpit.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2338952,
+      "alpha": false,
+      "sha256": "b7eba32ad1598b169fd754c2b44f61931faa9003072b454d32fba908d9c799ba",
+      "outputs": [
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 14811,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 23186,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 44240,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 67900,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 66073,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-cockpit-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 98762,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "interiorWheel",
+      "path": "assets-src/images/interior/gt3rs-interior-wheel.png",
+      "format": "png",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2237559,
+      "alpha": false,
+      "sha256": "bdb695885c77a3d18decc67c964a3e0fe0706fa1d5ea33e046a0c5d1cac738a3",
+      "outputs": [
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 13664,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 19834,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 44053,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 63318,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-1122.avif",
+          "format": "avif",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 60149,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-wheel-1122.webp",
+          "format": "webp",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 82018,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "interiorSeats",
+      "path": "assets-src/images/interior/gt3rs-interior-seats.png",
+      "format": "png",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2355142,
+      "alpha": false,
+      "sha256": "8055b4a28e9fbfe0fa9052be8bb8cfd0b21f9f71e99006e45bed2ecad969b49a",
+      "outputs": [
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 15694,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 23302,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 50691,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 74500,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-1122.avif",
+          "format": "avif",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 67159,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-seats-1122.webp",
+          "format": "webp",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 98450,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "interiorClubsport",
+      "path": "assets-src/images/interior/gt3rs-interior-clubsport.png",
+      "format": "png",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 2246534,
+      "alpha": false,
+      "sha256": "9f7f58a5df3eca440f70a656dfee39779b179911ca816b32874c0fa89caf53e2",
+      "outputs": [
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 600,
+          "bytes": 13772,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 600,
+          "bytes": 20762,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1200,
+          "bytes": 43469,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1200,
+          "bytes": 71764,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-1122.avif",
+          "format": "avif",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 56579,
+          "alpha": false
+        },
+        {
+          "path": "public/images/interior/gt3rs-interior-clubsport-1122.webp",
+          "format": "webp",
+          "width": 1122,
+          "height": 1402,
+          "bytes": 93538,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "finaleRear",
+      "path": "assets-src/images/finale/gt3rs-finale-rear34.png",
+      "format": "png",
+      "width": 1914,
+      "height": 822,
+      "bytes": 2086810,
+      "alpha": false,
+      "sha256": "4d3fe889f21834b1f22ce2a68340832b6cd8828431ba06b9ee323b4c963d8fac",
+      "outputs": [
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 275,
+          "bytes": 7041,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 275,
+          "bytes": 9786,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 550,
+          "bytes": 23077,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 550,
+          "bytes": 30534,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-1914.avif",
+          "format": "avif",
+          "width": 1914,
+          "height": 822,
+          "bytes": 46229,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-1914.webp",
+          "format": "webp",
+          "width": 1914,
+          "height": 822,
+          "bytes": 61182,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "finaleRear",
+      "path": "assets-src/images/finale/gt3rs-finale-rear34-portrait.png",
+      "format": "png",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 2017359,
+      "alpha": false,
+      "sha256": "bc8ded311986f2687d9df5df8675ca1fd0f14821d9d4cf292422b866dd458d43",
+      "outputs": [
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 9227,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 12830,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-828.avif",
+          "format": "avif",
+          "width": 828,
+          "height": 1104,
+          "bytes": 23611,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-828.webp",
+          "format": "webp",
+          "width": 828,
+          "height": 1104,
+          "bytes": 32824,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-1080.avif",
+          "format": "avif",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 39860,
+          "alpha": false
+        },
+        {
+          "path": "public/images/finale/gt3rs-finale-rear34-portrait-1080.webp",
+          "format": "webp",
+          "width": 1080,
+          "height": 1440,
+          "bytes": 51592,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailRearWing",
+      "path": "assets-src/images/details/gt3rs-detail-rear-wing.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2073089,
+      "alpha": false,
+      "sha256": "aabed8aaa237048b39f3f97b211f7359d654fb5385780e276a65d7ccf5bf0fd3",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 6691,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 12652,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 18745,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 33834,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 34126,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-rear-wing-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 62038,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailFrontAero",
+      "path": "assets-src/images/details/gt3rs-detail-front-aero.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2291177,
+      "alpha": false,
+      "sha256": "78a71efda4798522f393d54c2730c05b3571bc34197fed530202b34849dbca6c",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 7924,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 13288,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 27234,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 44328,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 55417,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-front-aero-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 88830,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailWheel",
+      "path": "assets-src/images/details/gt3rs-detail-wheel.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2479395,
+      "alpha": false,
+      "sha256": "09263aba122e9a0ebad41c08319c8a384f13940c8755364d9151628df1808193",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 11068,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18136,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 32746,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 53572,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 62801,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-wheel-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 98960,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailCarbon",
+      "path": "assets-src/images/details/gt3rs-detail-carbon.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2503974,
+      "alpha": false,
+      "sha256": "3a000f77176168931484e1db8cf3e70f3f774c504e70a0df57be2f44c8b00f90",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 9867,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 18568,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 34356,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 60326,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 65335,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-carbon-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 110358,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailDiffuser",
+      "path": "assets-src/images/details/gt3rs-detail-diffuser.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1959609,
+      "alpha": false,
+      "sha256": "39b225e813205c92cc238ee69e7d5ff583f0fafd3df2fbe2ced83ddb7b96fce8",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 5700,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 8886,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 18670,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 28124,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 35656,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-diffuser-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 53754,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailCockpit",
+      "path": "assets-src/images/details/gt3rs-detail-cockpit.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2219206,
+      "alpha": false,
+      "sha256": "17f34c4229cd68fa9ea7a3459de8a708b41d814b525f44cb87e3e64203766671",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 8249,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 11628,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 25243,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 34470,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 52968,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-cockpit-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 70608,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "detailSeat",
+      "path": "assets-src/images/details/gt3rs-detail-seat.png",
+      "format": "png",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2264697,
+      "alpha": false,
+      "sha256": "9d57b1f38e22d502ed8b02c5eb277c061370544e81fa2ceb6292ab776ceb11ca",
+      "outputs": [
+        {
+          "path": "public/images/details/gt3rs-detail-seat-480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 320,
+          "bytes": 7808,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-seat-480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 11766,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-seat-960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 640,
+          "bytes": 24694,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-seat-960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 640,
+          "bytes": 36656,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-seat-1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 960,
+          "bytes": 51543,
+          "alpha": false
+        },
+        {
+          "path": "public/images/details/gt3rs-detail-seat-1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 960,
+          "bytes": 75194,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-white-front34",
+      "path": "assets-src/images/showroom/gt3rs-white-front34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1870893,
+      "alpha": false,
+      "sha256": "583a4cc21339be9957c0232bdca751f968ee0875d10b78d964dad9ff3eef9b7d",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7676,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11856,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 20560,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 33938,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 31659,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 51618,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-white-side",
+      "path": "assets-src/images/showroom/gt3rs-white-side.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1979921,
+      "alpha": false,
+      "sha256": "e535d49de20159fab294a69d1acda4cb791b15891f2b0465ea02a6de24d16b2a",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-white-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 8484,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 12498,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 22151,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 37064,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-side-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 36320,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-side-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 56750,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-white-rear34",
+      "path": "assets-src/images/showroom/gt3rs-white-rear34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1890731,
+      "alpha": false,
+      "sha256": "e23d129817dfde1f91942a6363ce2b653c4e60c0816bc046d363bc3729c625c3",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 8011,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11836,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 21109,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 35346,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 32398,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 53434,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-white-front",
+      "path": "assets-src/images/showroom/gt3rs-white-front.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1807354,
+      "alpha": false,
+      "sha256": "2adefb9a486ba81f0ca6ffbc95a0ab3d56a29a30ab07c471cd54ae68251eae70",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-white-front-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 5676,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 7948,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 14993,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 22990,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 23362,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-front-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 36236,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-white-rear",
+      "path": "assets-src/images/showroom/gt3rs-white-rear.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1734994,
+      "alpha": false,
+      "sha256": "c40c3b1f64a4c0d067b6f1f01ebbed69db3eb47774f9bdfc9d386007d163e834",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 4887,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 6914,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 12736,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 20090,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 20219,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-white-rear-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 30356,
+          "alpha": false
+        }
+      ]
+    }
+  ]
+}

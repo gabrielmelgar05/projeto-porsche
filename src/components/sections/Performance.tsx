@@ -142,7 +142,7 @@ export function Performance() {
 
         <div
           data-perf-band=""
-          className="relative my-6 aspect-[4/3] overflow-hidden rounded-[var(--radius)] bg-concrete sm:aspect-[21/9] lg:my-10"
+          className="relative my-6 aspect-[16/9] overflow-hidden rounded-[var(--radius)] bg-concrete sm:aspect-[21/9] lg:my-10"
         >
           <div
             data-perf-band-inner=""

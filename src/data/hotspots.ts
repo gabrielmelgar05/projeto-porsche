@@ -31,11 +31,11 @@ export interface Hotspot {
 
 /** Order defines the panel's previous / next sequence. */
 export const hotspots: readonly Hotspot[] = [
-  { id: "frontAero", scene: "front34", x: 72, y: 70, detail: images.detailFrontAero },
-  { id: "wheelsBrakes", scene: "front34", x: 41, y: 66, detail: images.detailWheel },
-  { id: "carbon", scene: "front34", x: 60, y: 47, detail: images.detailCarbon },
-  { id: "rearWing", scene: "rear34", x: 63, y: 30, detail: images.detailRearWing },
-  { id: "diffuser", scene: "rear34", x: 67, y: 72, detail: images.detailDiffuser },
-  { id: "cockpit", scene: "cockpit", x: 52, y: 44, detail: images.detailCockpit },
-  { id: "seats", scene: "cockpit", x: 24, y: 62, detail: images.detailSeat },
+  { id: "frontAero", scene: "front34", x: 79, y: 76, detail: images.detailFrontAero },
+  { id: "wheelsBrakes", scene: "front34", x: 49, y: 66, detail: images.detailWheel },
+  { id: "carbon", scene: "front34", x: 69, y: 51, detail: images.detailCarbon },
+  { id: "rearWing", scene: "rear34", x: 69, y: 34, detail: images.detailRearWing },
+  { id: "diffuser", scene: "rear34", x: 79, y: 73, detail: images.detailDiffuser },
+  { id: "cockpit", scene: "cockpit", x: 72, y: 42, detail: images.detailCockpit },
+  { id: "seats", scene: "cockpit", x: 18, y: 64, detail: images.detailSeat },
 ];

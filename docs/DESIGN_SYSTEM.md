@@ -69,7 +69,7 @@ Verified at 320, 375, 390, 768, 1024, 1440, 1920.
 | Eyebrow | `components/ui/Eyebrow.tsx` | Section label above a headline — no index numbers |
 | ArtImage | `components/ui/ArtImage.tsx` | `<picture>` AVIF/WebP + mobile art direction; falls back to ImageFallback |
 | ImageFallback | `components/ui/ImageFallback.tsx` | Studio-cyclorama gradient + "Image pending" label; `compact` for thumbnails |
-| Showroom | `components/showroom/*` | Stage, thumbnails, paint radios, counter, prev/next |
+| Showroom | `components/showroom/*` | Stage, thumbnails, paint radios, segment indicator, prev/next |
 | Hotspots | `components/hotspots/*` | Viewpoint tablist, % positioned markers, detail `<dialog>` |
 
 ## Buttons & interaction states
@@ -89,9 +89,9 @@ Touch targets ≥ 44 × 44 px. Hover effects are never the only signal.
 
 | Section | < 1024 px | ≥ 1024 px |
 |---|---|---|
-| Hero | Headline + lede stacked, car 96vw, spec cards 2×2, portrait backdrop | Headline left / lede right, car 62vw over the "PORSCHE" word, 4 spec cards in a row |
+| Hero | <768: stacked headline/lede, car 96vw; 768–1023: split top block, car 78vw; 4 spec columns ≥640; portrait backdrop <768 | Headline left / lede right, car 62vw over the "PORSCHE" word, 4 spec cards in a row |
 | Precision | Three stacked chapters with their own images | Pinned scene, images replace each other |
-| Aerodynamics | Single column, portraits full width | Asymmetric grid, parallax portraits |
+| Aerodynamics | Single column; main wing image stays 16:10, portraits full width | Asymmetric grid, parallax portraits |
 | Showroom | Swipe, scrolling thumbnail strip, swipe hint | Arrow keys, 5-column thumbnails |
 | Hotspots | Image + complete list (every point reachable) | Same, wider; marker labels on hover/focus |
 | Detail panel | Bottom sheet | Right-hand drawer |

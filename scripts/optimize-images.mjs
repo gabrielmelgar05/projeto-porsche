@@ -44,6 +44,12 @@ for (const asset of expected) {
   }
 }
 
+// Optional manifest keys allow a framing revision to regenerate only its changed masters.
+const selected = new Set(process.argv.slice(2));
+for (const key of selected) {
+  if (!jobs.has(key)) throw new Error(`Unknown image key: ${key}`);
+}
+
 let processed = 0;
 if (existsSync(SRC)) {
   for (const dir of readdirSync(SRC, { withFileTypes: true })) {
@@ -51,6 +57,7 @@ if (existsSync(SRC)) {
     for (const file of readdirSync(join(SRC, dir.name))) {
       if (!MASTER_EXT.has(extname(file).toLowerCase())) continue;
       const key = `${dir.name}/${parse(file).name}`;
+      if (selected.size > 0 && !selected.has(key)) continue;
       const widths = jobs.get(key);
       if (!widths) {
         console.warn(`  skip ${key} — not in the manifest`);
@@ -59,13 +66,26 @@ if (existsSync(SRC)) {
       mkdirSync(join(OUT, dir.name), { recursive: true });
       const input = join(SRC, dir.name, file);
       const meta = await sharp(input).metadata();
+      const cutout = key === "hero/gt3rs-hero-car";
+      if (cutout) {
+        if (!meta.hasAlpha) throw new Error(`${input}: the hero cut-out requires real alpha`);
+        const alpha = (await sharp(input).ensureAlpha().stats()).channels[3];
+        if (alpha.min !== 0 || alpha.max !== 255)
+          throw new Error(`${input}: expected fully transparent background and opaque car pixels`);
+      }
       for (const width of widths) {
-        if ((meta.width ?? 0) < width)
-          console.warn(`  ${key}: master is narrower than ${width}px (upscaling)`);
+        if ((meta.autoOrient?.width ?? meta.width ?? 0) < width)
+          throw new Error(`${input}: ${width}px exceeds the native master width; update the manifest`);
         const base = join(OUT, dir.name, `${parse(file).name}-${width}`);
-        const pipeline = sharp(input).rotate().resize({ width, withoutEnlargement: false });
-        await pipeline.clone().avif({ quality: 52, effort: 6 }).toFile(`${base}.avif`);
-        await pipeline.clone().webp({ quality: 76, effort: 5 }).toFile(`${base}.webp`);
+        const pipeline = sharp(input).rotate().resize({ width, withoutEnlargement: true });
+        await pipeline
+          .clone()
+          .avif({ quality: cutout ? 65 : 52, effort: 6 })
+          .toFile(`${base}.avif`);
+        await pipeline
+          .clone()
+          .webp({ quality: cutout ? 82 : 76, alphaQuality: 100, effort: 5 })
+          .toFile(`${base}.webp`);
       }
       processed += 1;
       console.log(`  ✓ ${key} → ${widths.join(", ")}`);

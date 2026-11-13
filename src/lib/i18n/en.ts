@@ -33,7 +33,7 @@ export const en = {
   },
   /** Alt text per image id (see src/data/image-assets.ts). */
   alt: {
-    heroCar: "White 911 GT3 RS in side profile",
+    heroCar: "White 911 GT3 RS in front three-quarter view",
     precisionSide: "Side profile of the 911 GT3 RS",
     precisionBrake: "Front wheel and brake calliper",
     precisionWing: "Rear wing silhouette against a low sun",

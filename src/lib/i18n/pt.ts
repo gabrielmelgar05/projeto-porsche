@@ -31,7 +31,7 @@ export const pt: Dictionary = {
     pending: "Imagem pendente",
   },
   alt: {
-    heroCar: "911 GT3 RS branco em perfil lateral",
+    heroCar: "911 GT3 RS branco em vista frontal de três quartos",
     precisionSide: "Perfil lateral do 911 GT3 RS",
     precisionBrake: "Roda dianteira e pinça de freio",
     precisionWing: "Silhueta da asa traseira contra o sol baixo",

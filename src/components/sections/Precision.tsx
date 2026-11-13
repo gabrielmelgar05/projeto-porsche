@@ -147,7 +147,7 @@ export function Precision() {
             </div>
           </div>
 
-          <div className="relative col-span-7 col-start-6 h-[min(78svh,52rem)] overflow-hidden rounded-[var(--radius)] bg-concrete">
+          <div className="relative col-span-7 col-start-6 h-[min(43vw,78svh,52rem)] overflow-hidden rounded-[var(--radius)] bg-concrete">
             {frames.map((frame, i) => (
               <div
                 key={frame.alt}
@@ -158,7 +158,7 @@ export function Precision() {
                   <ArtImage
                     asset={frame.asset}
                     alt={t.alt[frame.alt]}
-                    sizes="(min-width: 1024px) 58vw, 100vw"
+                    sizes="(min-width: 1024px) 85vw, 100vw"
                   />
                 </div>
               </div>

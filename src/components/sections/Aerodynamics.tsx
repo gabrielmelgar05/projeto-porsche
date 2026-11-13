@@ -182,7 +182,7 @@ export function Aerodynamics() {
       <div className="frame mt-12 lg:mt-20">
         <figure
           data-aero-frame=""
-          className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius)] bg-ink sm:aspect-[16/10]"
+          className="relative aspect-[16/10] overflow-hidden rounded-[var(--radius)] bg-ink"
         >
           <div data-aero-frame-inner="" className="absolute inset-0">
             <ArtImage

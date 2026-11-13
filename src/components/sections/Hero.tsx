@@ -194,8 +194,11 @@ export function Hero() {
             <div
               data-hero-floor=""
               aria-hidden="true"
-              className="absolute -bottom-[4%] left-[6%] right-[6%] h-[16%] rounded-[50%] bg-[radial-gradient(50%_50%_at_50%_50%,rgb(0_0_0/0.75)_0%,rgb(0_0_0/0.35)_45%,transparent_75%)]"
-            />
+              className="absolute -bottom-[4%] left-[6%] right-[6%] h-[16%]"
+            >
+              {/* The child owns perspective; GSAP keeps ownership of the wrapper's scale. */}
+              <span className="absolute inset-0 rotate-[7deg] rounded-[50%] bg-[radial-gradient(50%_50%_at_50%_50%,rgb(0_0_0/0.75)_0%,rgb(0_0_0/0.35)_45%,transparent_75%)]" />
+            </div>
             <ArtImage
               asset={images.heroCar}
               alt={t.alt.heroCar}

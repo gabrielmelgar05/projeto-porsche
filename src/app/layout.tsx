@@ -7,14 +7,14 @@ import "./globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   axes: ["wdth"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   display: "swap",
 });
 

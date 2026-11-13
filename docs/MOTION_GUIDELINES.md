@@ -67,6 +67,9 @@ drives on to the right, content fades. Mobile: the car drives on, cards fade.
 - Next / previous: incoming view wipes in from the travel direction (clip-path, 0.9 s, curtain),
   settles from scale 1.08; the outgoing view drifts 6 % the other way.
 - Paint change: crossfade on identical framing (no warping).
+- Image readiness: the incoming photograph decodes before the transition starts. The last completed
+  view remains visible during slow requests or rapid selection; scoped cleanup cancels stale decodes
+  and animations. Mask/crossfade durations remain unchanged.
 - Inputs: buttons, thumbnails, ←/→ on the focused stage, swipe (pointer events, 48 px threshold).
 - Announcements: polite live region ("Side profile, view 2 of 5").
 
