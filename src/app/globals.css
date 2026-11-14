@@ -226,41 +226,9 @@
 /* ═══ Components ══════════════════════════════════════════════════ */
 
 @layer components {
-  /* Layout uses padding, leaving GSAP's transforms free to animate the whole group. */
+  /* Offset the original-sized group as one unit, independently of GSAP transforms. */
   .hero-copy {
-    --hero-title-size: clamp(2.75rem, 6vw, 6.25rem);
-    padding-block-start: calc(
-      var(--header-h) + 3.5rem + clamp(1rem, calc(8svh - 3rem), 2rem) + env(safe-area-inset-top)
-    );
-  }
-
-  .hero-copy > * {
-    flex-shrink: 0;
-  }
-
-  @media (min-width: 40rem) {
-    .hero-copy {
-      padding-block-start: calc(
-        var(--header-h) + 4.5rem + clamp(1rem, calc(12svh - 4rem), 3rem) + env(safe-area-inset-top)
-      );
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .hero-copy {
-      padding-block-start: calc(
-        var(--header-h) + 5rem + clamp(0rem, calc(25svh - 10.3125rem), 5.625rem) + env(safe-area-inset-top)
-      );
-      /* Reserve the existing photograph's roofline on wide, short viewports. */
-      --hero-picture-h: max(100svh, 44rem, 56.28vw);
-      max-block-size: calc(max(80svh, 35.2rem) - var(--hero-picture-h) * 0.304 - 1rem);
-    }
-  }
-
-  @media (min-width: 64rem) and (max-height: 45rem) {
-    .hero-copy {
-      --hero-title-size: clamp(2.75rem, 8svh, 4rem);
-    }
+    top: clamp(3.75rem, 7svh, 5rem);
   }
 
   /* Masks for text reveals (React renders the pieces, GSAP moves them). */

@@ -1,14 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { images } from "@/data/image-assets";
 import { EASE, MQ, gsap, reducedMotion, useGSAP } from "@/lib/animations/gsap";
 import { finishHeroIntro, registerHeroIntro } from "@/lib/animations/intro";
 import { useI18n } from "@/lib/i18n/use-i18n";
 import { ArtImage } from "@/components/ui/ArtImage";
 import { Chars } from "@/components/ui/Split";
-import { CtaLink } from "@/components/ui/CtaLink";
 
 /** A single composed road photograph, with responsive art direction and the original intro hand-off. */
 export function Hero() {
@@ -102,13 +101,13 @@ export function Hero() {
 
       <div
         data-hero-copy=""
-        className="hero-copy frame relative z-10 flex flex-col items-center justify-end text-center"
+        className="hero-copy frame relative z-10 flex flex-col items-center pt-[calc(var(--header-h)+3.5rem)] text-center sm:pt-[calc(var(--header-h)+4.5rem)] lg:pt-[calc(var(--header-h)+5rem)]"
       >
         <h1
           id="hero-title"
           data-hero-title=""
           data-hero-in=""
-          className="max-w-[18ch] font-display text-[length:var(--hero-title-size)] font-semibold uppercase leading-[0.94] tracking-[-0.04em] [font-stretch:112%]"
+          className="max-w-[18ch] font-display text-[clamp(2.75rem,6vw,6.25rem)] font-semibold uppercase leading-[0.94] tracking-[-0.04em] [font-stretch:112%]"
         >
           <Chars text={t.hero.headline} />
         </h1>
@@ -119,15 +118,25 @@ export function Hero() {
         >
           {t.hero.lede}
         </p>
-        <CtaLink
+        <a
           href="#showroom"
-          tone="light"
           data-hero-cta=""
           data-hero-in=""
-          className="mt-7 justify-center shadow-[0_8px_32px_rgb(0_0_0/0.08)] sm:mt-8"
+          className="group relative mt-7 inline-flex min-h-12 items-center justify-center gap-4 overflow-hidden rounded-[7px] border border-white/60 bg-white px-5 py-3 font-display text-[0.9375rem] font-semibold text-ink shadow-[0_8px_32px_rgb(0_0_0/0.08)] sm:mt-8 sm:px-6"
         >
-          {t.hero.cta}
-        </CtaLink>
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 origin-left scale-x-0 bg-red transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:scale-x-100 group-focus-visible:scale-x-100"
+          />
+          <span className="relative transition-colors duration-300 group-hover:text-white group-focus-visible:text-white">
+            {t.hero.cta}
+          </span>
+          <ArrowRight
+            aria-hidden="true"
+            className="relative size-4 transition-[translate,color] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-1 group-hover:text-white"
+            strokeWidth={1.75}
+          />
+        </a>
       </div>
 
       <div
