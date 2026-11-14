@@ -1,5 +1,7 @@
-import type { ImageAsset } from "@/types";
+import type { ImageAsset, PaintId, ViewId } from "@/types";
 import available from "./generated/available-images.json" with { type: "json" };
+import nativeDimensions from "./generated/image-dimensions.json" with { type: "json" };
+import versions from "./generated/image-versions.json" with { type: "json" };
 
 /**
  * Image manifest — every photograph the site can show.
@@ -22,24 +24,29 @@ const asset = (a: Omit<ImageAsset, "widths"> & { widths?: readonly number[] }): 
   ...a,
 });
 
+export const paintIds = [
+  "ice-grey",
+  "white",
+  "matte-black",
+  "gt-silver",
+  "guards-red",
+] as const satisfies readonly PaintId[];
+
 export const images = {
-  /** Hero layer 1 — atmospheric backdrop (no car). */
-  heroBackdrop: asset({
-    id: "heroBackdrop",
+  /** One photograph per viewport: car and environment are composed in the source image. */
+  heroRoad: asset({
+    id: "heroRoad",
     dir: "hero",
-    name: "gt3rs-hero-backdrop",
+    name: "gt3rs-hero-road",
     width: 1672,
     height: 941,
-    mobile: { name: "gt3rs-hero-backdrop-portrait", width: 941, height: 1672 },
-  }),
-  /** Hero layer 3 — front three-quarter view with real alpha transparency. */
-  heroCar: asset({
-    id: "heroCar",
-    dir: "hero",
-    name: "gt3rs-hero-car",
-    width: 1983,
-    height: 793,
-    widths: [640, 1280, 1920],
+    focus: "50% 80%",
+    mobile: {
+      name: "gt3rs-hero-road-portrait",
+      width: 941,
+      height: 1672,
+      media: "(max-width: 1023px), (max-aspect-ratio: 4/3)",
+    },
   }),
   precisionSide: asset({
     id: "precisionSide",
@@ -200,23 +207,33 @@ export const images = {
 export type ImageId = keyof typeof images;
 
 /** Showroom: one image per paint × view, all with identical studio framing. */
-export const showroomImage = (paint: string, view: string): ImageAsset => ({
-  id: `showroom-${paint}-${view}`,
-  dir: "showroom",
-  name: `gt3rs-${paint}-${view}`,
-  width: 1672,
-  height: 941,
-  widths: WIDE,
-});
+export const showroomImage = (paint: PaintId, view: ViewId): ImageAsset => {
+  const name = `gt3rs-${paint}-${view}`;
+  const [width, height] = (nativeDimensions as Record<string, number[]>)[name] ?? [1672, 941];
+  return {
+    id: `showroom-${paint}-${view}`,
+    dir: "showroom",
+    name,
+    width: width!,
+    height: height!,
+    widths: [640, 1280, width!],
+  };
+};
 
 const availableIds = new Set<string>(available as string[]);
 
 export const isAvailable = (asset: ImageAsset): boolean => availableIds.has(asset.id);
 
+/** Shared by picture sources and selective preloads so a revision is fetched only once. */
+export const imageUrl = (dir: string, name: string, width: number, format: "avif" | "webp") => {
+  const version = (versions as Record<string, string>)[`${dir}/${name}`];
+  return `/images/${dir}/${name}-${width}.${format}${version ? `?v=${version}` : ""}`;
+};
+
 /** Every asset, for the optimiser script and docs. */
 export const allAssets = (): ImageAsset[] => [
   ...Object.values(images),
-  ...(["white", "black"] as const).flatMap((paint) =>
+  ...paintIds.flatMap((paint) =>
     (["front34", "side", "rear34", "front", "rear"] as const).map((view) => showroomImage(paint, view)),
   ),
 ];

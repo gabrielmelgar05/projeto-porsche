@@ -33,7 +33,7 @@ export const en = {
   },
   /** Alt text per image id (see src/data/image-assets.ts). */
   alt: {
-    heroCar: "White 911 GT3 RS in front three-quarter view",
+    heroRoad: "Ice Grey 911 GT3 RS on a misty mountain road",
     precisionSide: "Side profile of the 911 GT3 RS",
     precisionBrake: "Front wheel and brake calliper",
     precisionWing: "Rear wing silhouette against a low sun",
@@ -55,10 +55,10 @@ export const en = {
     detailSeat: "Carbon full bucket seat",
   },
   hero: {
-    eyebrow: "992 generation · Concept study",
-    headline: "Built where the track sets the rules.",
-    lede: "A study in downforce, precision and restraint — the 992 GT3 RS as an editorial experience.",
-    cta: "Explore the experience",
+    eyebrow: "992 generation · Independent concept",
+    headline: "Beyond the limit.",
+    lede: "911 GT3 RS. Engineered for the extraordinary.",
+    cta: "Explore the 911 GT3 RS",
     scroll: "Scroll",
   },
   specs: {
@@ -124,7 +124,17 @@ export const en = {
       rear: "Rear",
     },
     paint: "Paint",
-    paints: { white: "White", black: "Black" },
+    paints: {
+      "ice-grey": "Ice Grey Metallic",
+      white: "White",
+      "matte-black": "Matte Black",
+      "gt-silver": "GT Silver Metallic",
+      "guards-red": "Guards Red",
+    },
+    finishes: { solid: "Solid paint", metallic: "Metallic paint", matte: "Concept finish · matte paint" },
+    preparing: "Preparing {paint} — {view}",
+    loadFailed: "This photograph could not be loaded. Your previous view is still available.",
+    retry: "Try again",
     paintPending: "Imagery in production",
     previous: "Previous view",
     next: "Next view",

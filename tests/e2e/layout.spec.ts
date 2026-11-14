@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { expect, test } from "@playwright/test";
 import { openFast } from "./helpers";
 
-const widths = [320, 375, 390, 768, 1024, 1440, 1920];
+const widths = [320, 375, 390, 430, 768, 1024, 1440, 1920];
 
 for (const width of widths) {
   for (const locale of ["en", "pt"] as const) {

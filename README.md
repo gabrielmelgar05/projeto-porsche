@@ -33,8 +33,8 @@ npm run preview # serve out/ locally on http://localhost:4173 (Brotli/gzip for t
 | `preview` | Serves `out/` like a static host |
 | `lint` / `typecheck` / `format` | ESLint · `tsc --noEmit` · Prettier |
 | `images` | Optimises masters in `assets-src/` → AVIF/WebP in `public/images/` |
-| `images:audit` | Checks native dimensions, decoded outputs, alpha and provenance; writes the asset report |
-| `brand` | Regenerates the GT3 RS signature, OG card and touch icon |
+| `images:audit` | Checks native dimensions, decoded outputs and provenance; writes the asset report |
+| `brand` | Regenerates the GT3 RS signature, OG card and supplied crest icons |
 | `test:e2e` | Playwright end-to-end tests against `out/` (uses installed Google Chrome) |
 | `check` | lint + typecheck + build + e2e |
 
@@ -43,7 +43,7 @@ npm run preview # serve out/ locally on http://localhost:4173 (Brotli/gzip for t
 ```
 public/
   brand/gt3rs-performance-mark.svg   original concept signature (generated)
-  icons/                             provisional neutral favicon + touch icon
+  icons/                             Porsche crest favicon PNG16/32 + Apple180
   images/<section>/                  generated photo variants (after `npm run images`)
   og.png, _headers                   social card, Cloudflare cache headers
 assets-src/images/<section>/         photo masters (not deployed)
@@ -73,10 +73,10 @@ docs/                 CODEX_IMAGE_ASSETS.md · DESIGN_SYSTEM.md · MOTION_GUIDEL
 | # | Section | Highlights |
 |---|---|---|
 | 00 | Preloader | GT3 RS signature drawn path by path, fill, red stripe, travelling yellow glint, panels part into the hero |
-| 01 | Hero | Three depth layers: backdrop · giant "PORSCHE" · car cut-out; headline left, lede + link right, spec cards; coordinated entrance and layered scroll exit |
+| 01 | Hero | Single cinematic road photograph, responsive portrait companion, centred headline and showroom CTA; coordinated reveal and subtle scroll movement |
 | 02 | Precision in motion | Desktop pinned scene: three photographs replace each other through masks with three chapters |
 | 03 | Aerodynamics | Wing frame with scroll-drawn illustrative airflow (labelled as such), verified facts, 860 kg figure |
-| 04 | Interactive showroom | 5 views, thumbnails, prev/next, ←/→, swipe, live announcements, paint architecture (white / black) |
+| 04 | Interactive showroom | 5 views, thumbnails, prev/next, ←/→, swipe, live announcements, 5 real paint sets, decode-gated transitions, selective preload and retry |
 | 05 | Details (hotspots) | 3 viewpoints, 7 markers anchored to the image, complete list, editorial detail dialog |
 | 06 | Performance | Large figures climbing digit by digit, track band |
 | 07 | Interior | Pinned horizontal journey through the cabin (native scroller on mobile) |
@@ -103,19 +103,28 @@ type error.
 
 ## Adding the photographs
 
-The essential campaign is integrated: 28 original generated PNG masters feed 26 image entries,
-including the Hero and Finale mobile compositions. The optional five-view black showroom set is
-still pending and disabled. See `docs/CODEX_IMAGE_ASSETS.md` for native-resolution limits, provenance
-and the full integration/review record.
+The campaign contains 47 native PNG masters across 45 image entries, encoded as AVIF and WebP.
+The Hero uses `hero/gt3rs-hero-road.png` and its portrait companion as alternate sources of one
+photograph, with no separate vehicle layer. The old Hero sources are archived outside `public/`.
 
-1. Read **docs/CODEX_IMAGE_ASSETS.md** (inventory, sizes, prompts, consistency rules, hotspots).
-2. Save masters as `assets-src/images/<section>/<name>.png`.
-3. Run `npm run images` — slots switch to the photographs automatically. Then `npm run images:audit`
-   validates decoded outputs and writes `docs/IMAGE_ASSET_REPORT.json`.
-4. Adjust hotspot positions in `src/data/hotspots.ts` if needed, then `npm run check`.
+The showroom has five real photographic sets: Ice Grey Metallic (default), White, Matte Black,
+GT Silver Metallic and Guards Red. Each has `front34`, `side`, `rear34`, `front` and `rear`.
+Matte Black is labelled a concept finish. Colour and angle persist across changes; the previous
+photograph and checked swatch remain until the next image decodes. Rapid changes favour the
+latest request; failed loads retain the previous view and offer retry. Two adjacent views are
+preloaded near the gallery; other colours load on demand.
 
-The navbar logo is the original GT3 RS concept signature. The crest favicon is wired but switched
-off until a licensed file is supplied — see section 9 of the image brief.
+Save masters in `assets-src/images/<section>/`, then run `npm run images` and `npm run images:audit`.
+For selected changes use `npm run images -- showroom/gt3rs-white-front34`. The pipeline records native
+showroom dimensions and never enlarges images. Prompts and references: `assets-src/image-production.json`.
+See `docs/CODEX_IMAGE_ASSETS.md` for the current inventory and brand workflow.
+
+The supplied “vector” crest is actually a JPEG736×736. Its exterior white matte is removed and
+PNG16/32, ICO and Apple180 icons are generated by `npm run brand`, with cache-busted metadata.
+The navbar and preloader retain the original GT3 RS concept signature. Localized perspective
+compositing bakes the supplied crest into visible hood, wheel and steering-wheel badges; originals
+remain in `assets-src/archive/unbranded/`. Source notes are recorded without claiming an independently
+verified licence for the user-supplied artwork. The independent-concept attribution remains visible.
 
 ## Deploying to Cloudflare Pages
 
@@ -135,8 +144,8 @@ Or deploy from the command line: `npm run build && npx wrangler pages deploy out
 
 `npm run build && npm run test:e2e` runs against the exported site on desktop (1440×900) and mobile
 (Pixel 7): preloader (drawing, timing, repeat, skip, reduced motion), language switching and
-persistence, showroom (buttons, keyboard, thumbnails, paint availability, no broken images),
+persistence, showroom (buttons, keyboard, thumbnails, all25 paint/angle combinations, rapid selections, loading/failure/retry, no broken images),
 hotspots (dialog, navigation, Escape, focus return, list, tab keys), navigation (mobile menu),
 finale signature (draws, rewinds, redraws with the scroll), navbar logo, no numbered markers,
-layout at 320–1920 px in EN and PT (no horizontal overflow, full-height hero, text ≥ 13 px) and
+layout at 320/375/390/430/768/1024/1440/1920 px in EN and PT (no horizontal overflow, full-height hero, text ≥ 13 px) and
 static-export output. `CAPTURE=1 npx playwright test visual` records review screenshots in `.visual/`.

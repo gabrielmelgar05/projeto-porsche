@@ -19,7 +19,7 @@ for (const asset of expected) {
       ? [{ ...asset.mobile, widths: [480, 828, 1080].filter((width) => width <= asset.mobile.width) }]
       : []),
   ];
-  const optional = asset.id.startsWith("showroom-black-");
+  const optional = false;
   const main = `assets-src/images/${asset.dir}/${asset.name}.png`;
   if (optional && !existsSync(main)) {
     assert(!available.includes(asset.id), `${asset.id}: available without a master`);
@@ -81,6 +81,49 @@ for (const asset of expected) {
   }
 }
 
+// A localized badge edit must not change the car, camera or any pixel outside its patches.
+const placements = JSON.parse(readFileSync("assets-src/brand/photo-placements.json", "utf8"));
+const localizedEdits = [];
+for (const [key, decals] of Object.entries(placements)) {
+  const original = `assets-src/archive/unbranded/${key}.png`;
+  const current = `assets-src/images/${key}.png`;
+  const before = await sharp(original).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  const after = await sharp(current).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  assert.equal(before.info.width, after.info.width, `${key}: badge edit reframed image`);
+  assert.equal(before.info.height, after.info.height, `${key}: badge edit reframed image`);
+  let changed = 0,
+    outside = 0;
+  const bounds = decals.map(({ quad }) => ({
+    left: Math.min(...quad.map((p) => p[0])) - 4,
+    right: Math.max(...quad.map((p) => p[0])) + 4,
+    top: Math.min(...quad.map((p) => p[1])) - 4,
+    bottom: Math.max(...quad.map((p) => p[1])) + 4,
+  }));
+  for (let p = 0; p < before.data.length; p += 3) {
+    if (
+      before.data[p] === after.data[p] &&
+      before.data[p + 1] === after.data[p + 1] &&
+      before.data[p + 2] === after.data[p + 2]
+    )
+      continue;
+    changed++;
+    const pixel = p / 3,
+      x = pixel % before.info.width,
+      y = Math.floor(pixel / before.info.width);
+    if (!bounds.some((b) => x >= b.left && x <= b.right && y >= b.top && y <= b.bottom)) outside++;
+  }
+  assert(changed > 0, `${key}: badge edit did not change pixels`);
+  assert.equal(outside, 0, `${key}: pixels changed outside badge patches`);
+  localizedEdits.push({ key, badges: decals.length, changedPixels: changed, outsidePatchPixels: outside });
+}
+for (const size of [16, 32, 180]) {
+  const path = size === 180 ? "public/icons/apple-touch-icon.png" : `public/icons/favicon-${size}.png`;
+  const metadata = await sharp(path).metadata();
+  assert.equal(metadata.width, size);
+  assert.equal(metadata.height, size);
+  assert.equal(metadata.format, "png");
+  assert(metadata.hasAlpha);
+}
 assert.deepEqual([...available].sort(), [...integrated].sort(), "Stale availability ids");
 assert.equal(masters.length, production.assets.length, "Unused production masters");
 const report = {
@@ -103,10 +146,14 @@ const report = {
     noUpscaling: true,
     noDuplicateMasters: true,
     allOutputsDecoded: true,
-    heroAlphaPreserved: true,
+    singleComposedHero:
+      expected.some((asset) => asset.id === "heroRoad") && !expected.some((asset) => asset.id === "heroCar"),
     provenanceComplete: true,
+    localizedBadgesPreserveSurroundingPixels: true,
+    crestIconsNativeFormats: true,
   },
   pending,
+  localizedEdits,
   masters,
 };
 writeFileSync("docs/IMAGE_ASSET_REPORT.json", `${JSON.stringify(report, null, 2)}\n`);

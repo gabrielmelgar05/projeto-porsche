@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { PaintId } from "@/types";
 import { views } from "@/data/gallery";
-import { showroomImage } from "@/data/image-assets";
+import { imageUrl, showroomImage } from "@/data/image-assets";
 import { EASE, gsap, reducedMotion, useGSAP } from "@/lib/animations/gsap";
 import { useSwipe } from "@/hooks/use-swipe";
 import { fill } from "@/lib/i18n/format";
@@ -19,49 +19,87 @@ interface Layer {
   paint: PaintId;
   direction: -1 | 0 | 1;
 }
+const initial: Layer = { key: 0, index: 0, paint: "ice-grey", direction: 0 };
 
 export function Showroom() {
   const { t } = useI18n();
   const stage = useRef<HTMLDivElement>(null);
   const counter = useRef(0);
-  const visibleKey = useRef(0);
-  const [layers, setLayers] = useState<Layer[]>([{ key: 0, index: 0, paint: "white", direction: 0 }]);
-  const [announcement, setAnnouncement] = useState("");
-
+  const visible = useRef<Layer>(initial);
+  const requested = useRef<Layer>(initial);
+  const cached = useRef(new Map<string, HTMLImageElement>());
+  const [layers, setLayers] = useState<Layer[]>([initial]);
+  const [presented, setPresented] = useState<Layer>(initial);
+  const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [near, setNear] = useState(false);
+  const [announcedIndex, setAnnouncedIndex] = useState<number | null>(null);
   const current = layers[layers.length - 1]!;
   const viewName = (index: number) => t.showroom.views[views[index]!];
 
-  const show = useCallback(
-    (index: number, paint: PaintId, direction: -1 | 0 | 1) => {
-      setLayers((previous) => {
-        const top = previous[previous.length - 1]!;
-        if (top.index === index && top.paint === paint) return previous;
-        counter.current += 1;
-        const visible = previous.find((layer) => layer.key === visibleKey.current) ?? previous[0]!;
-        return [visible, { key: counter.current, index, paint, direction }];
-      });
-      setAnnouncement(
-        fill(t.showroom.announce, {
-          view: t.showroom.views[views[index]!],
-          index: index + 1,
-          total: views.length,
-        }),
-      );
-    },
-    [t],
-  );
+  const show = useCallback((index: number, paint: PaintId, direction: -1 | 0 | 1, force = false) => {
+    const previous = requested.current;
+    if (!force && previous.index === index && previous.paint === paint) return;
+    const next = { key: ++counter.current, index, paint, direction };
+    requested.current = next;
+    setPresented(visible.current);
+    setLoading(true);
+    setFailed(false);
+    setLayers([visible.current, next]);
+  }, []);
 
   const step = useCallback(
     (direction: -1 | 1) => {
-      const next = (current.index + direction + views.length) % views.length;
-      show(next, current.paint, direction);
+      const active = requested.current;
+      show((active.index + direction + views.length) % views.length, active.paint, direction);
     },
-    [current.index, current.paint, show],
+    [show],
   );
-
   useSwipe(stage, step);
 
-  // Transition between the outgoing and incoming layers.
+  useEffect(() => {
+    if (!stage.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    observer.observe(stage.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Only two neighbouring views of the displayed paint, using the browser's chosen format/size.
+  useEffect(() => {
+    if (!near || layers.length !== 1 || loading) return;
+    const image = stage.current?.querySelector("img");
+    if (!image) return;
+    let cancelled = false;
+    const preload = () => {
+      if (cancelled) return;
+      const match = image.currentSrc.match(/-(\d+)\.(avif|webp)(?:\?.*)?$/);
+      if (!match) return;
+      for (const direction of [-1, 1]) {
+        const index = (presented.index + direction + views.length) % views.length;
+        const asset = showroomImage(presented.paint, views[index]!);
+        const width = asset.widths.find((width) => width >= Number(match[1])) ?? asset.width;
+        const url = imageUrl(asset.dir, asset.name, width, match[2] as "avif" | "webp");
+        if (cached.current.has(url)) continue;
+        const adjacent = new Image();
+        adjacent.decoding = "async";
+        adjacent.src = url;
+        cached.current.set(url, adjacent);
+      }
+    };
+    void image.decode().then(preload, () => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [near, layers, loading, presented]);
+
   useGSAP(
     (context) => {
       if (layers.length < 2) return;
@@ -71,15 +109,23 @@ export function Showroom() {
       const inEl = q(`[data-layer="${incoming!.key}"]`)[0];
       if (!outEl || !inEl) return;
       let cancelled = false;
+      const isLatest = () => !cancelled && inEl.isConnected && incoming!.key === counter.current;
       const done = () => {
-        visibleKey.current = incoming!.key;
-        setLayers((previous) => previous.filter((layer) => layer.key !== outgoing!.key));
+        if (!isLatest()) return;
+        visible.current = incoming!;
+        setPresented(incoming!);
+        setLoading(false);
+        setAnnouncedIndex(incoming!.index);
+        setLayers([incoming!]);
       };
-      // Keep the last completed view visible even during slow loads or rapid navigation.
       gsap.set(inEl, { autoAlpha: 0 });
+      const failure = () => {
+        if (!isLatest()) return;
+        setLoading(false);
+        setFailed(true);
+      };
       const reveal = () => {
-        if (cancelled || !inEl.isConnected) return;
-        // Async decoding must still create animations inside the scoped GSAP context.
+        if (!isLatest()) return;
         context.add(() => {
           if (reducedMotion() || incoming!.direction === 0) {
             gsap.fromTo(
@@ -98,11 +144,11 @@ export function Showroom() {
           );
           gsap.fromTo(
             inEl.querySelector("[data-layer-inner]"),
-            { scale: 1.08, xPercent: 4 * dir },
-            { scale: 1, xPercent: 0, duration: 1.2, ease: EASE.reveal },
+            { scale: 1.035, xPercent: 2 * dir },
+            { scale: 1, xPercent: 0, duration: 0.9, ease: EASE.reveal },
           );
           gsap.to(outEl.querySelector("[data-layer-inner]"), {
-            xPercent: -6 * dir,
+            xPercent: -3 * dir,
             duration: 0.9,
             ease: EASE.curtain,
           });
@@ -111,10 +157,8 @@ export function Showroom() {
       const photograph = inEl.querySelector<HTMLImageElement>("img");
       if (photograph) {
         photograph.loading = "eager";
-        void photograph.decode().then(reveal, reveal);
-      } else {
-        reveal();
-      }
+        void photograph.decode().then(() => (photograph.naturalWidth > 0 ? reveal() : failure()), failure);
+      } else failure();
       return () => {
         cancelled = true;
       };
@@ -122,30 +166,26 @@ export function Showroom() {
     { scope: stage, dependencies: [layers], revertOnUpdate: true },
   );
 
+  const preparing = fill(t.showroom.preparing, {
+    paint: t.showroom.paints[current.paint],
+    view: viewName(current.index),
+  });
   return (
-    <div>
-      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <PaintSelector value={current.paint} onChange={(paint) => show(current.index, paint, 0)} />
-        <p className="t-label hidden text-stone md:block">{t.showroom.hintKeys}</p>
-        <p className="t-label text-stone md:hidden">{t.showroom.hintSwipe}</p>
-      </div>
-
+    <div className="grid min-w-0 grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-x-7">
       <div
         ref={stage}
         role="group"
         aria-roledescription="carousel"
         aria-label={t.showroom.title}
+        aria-busy={loading}
         tabIndex={0}
         onKeyDown={(event) => {
-          if (event.key === "ArrowRight") {
+          if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
-            step(1);
-          } else if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            step(-1);
+            step(event.key === "ArrowRight" ? 1 : -1);
           }
         }}
-        className="relative mx-auto mt-6 aspect-[16/9] w-full max-w-[calc(70svh*16/9)] touch-pan-y overflow-hidden rounded-[var(--radius)] bg-concrete"
+        className="relative aspect-[16/9] w-full min-w-0 touch-pan-y overflow-hidden rounded-[10px] bg-concrete lg:col-start-1 lg:row-start-1"
       >
         {layers.map((layer) => (
           <div key={layer.key} data-layer={layer.key} className="absolute inset-0 overflow-hidden">
@@ -156,32 +196,58 @@ export function Showroom() {
                   paint: t.showroom.paints[layer.paint].toLowerCase(),
                   view: viewName(layer.index).toLowerCase(),
                 })}
-                sizes="(min-width: 1024px) 80vw, 100vw"
+                sizes="(min-width: 1600px) 1180px, (min-width: 1024px) 70vw, 100vw"
               />
             </div>
           </div>
         ))}
       </div>
-
+      <div className="min-w-0 lg:col-start-2 lg:row-span-3 lg:row-start-1">
+        <PaintSelector
+          value={presented.paint}
+          pending={loading ? current.paint : undefined}
+          onChange={(paint) => show(requested.current.index, paint, 0)}
+        />
+        <div className="mt-3 min-h-10 text-[0.8125rem] leading-relaxed text-stone" role="status">
+          {loading ? (
+            preparing
+          ) : failed ? (
+            <>
+              <p>{t.showroom.loadFailed}</p>
+              <button
+                type="button"
+                className="mt-2 min-h-11 cursor-pointer underline underline-offset-4"
+                onClick={() => show(current.index, current.paint, 0, true)}
+              >
+                {t.showroom.retry}
+              </button>
+            </>
+          ) : null}
+        </div>
+      </div>
       <p className="sr-only" aria-live="polite">
-        {announcement}
+        {announcedIndex === null
+          ? ""
+          : fill(t.showroom.announce, {
+              view: viewName(announcedIndex),
+              index: announcedIndex + 1,
+              total: views.length,
+            })}
       </p>
-
-      <div className="mx-auto mt-5 flex w-full max-w-[calc(70svh*16/9)] items-center justify-between gap-4">
+      <div className="flex min-w-0 items-center justify-between gap-4 lg:col-start-1 lg:row-start-2">
         <div className="flex flex-col gap-3">
-          {/* Position indicator: one segment per view, the active one in red. */}
           <span aria-hidden="true" data-view-progress="" className="flex gap-1.5">
             {views.map((view, index) => (
               <span
                 key={view}
                 className={cn(
                   "h-0.5 w-7 transition-colors duration-500",
-                  index === current.index ? "bg-red" : "bg-ink/20",
+                  index === presented.index ? "bg-red" : "bg-ink/20",
                 )}
               />
             ))}
           </span>
-          <p className="t-title">{viewName(current.index)}</p>
+          <p className="t-title">{viewName(presented.index)}</p>
         </div>
         <div className="flex gap-2">
           {([-1, 1] as const).map((direction) => (
@@ -190,7 +256,7 @@ export function Showroom() {
               type="button"
               onClick={() => step(direction)}
               aria-label={direction < 0 ? t.showroom.previous : t.showroom.next}
-              className="grid size-12 cursor-pointer place-items-center rounded-[2px] border border-ink/20 transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white"
+              className="grid size-12 cursor-pointer place-items-center rounded-[6px] border border-ink/20 transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white"
             >
               {direction < 0 ? (
                 <ChevronLeft aria-hidden="true" className="size-5" strokeWidth={1.5} />
@@ -201,42 +267,50 @@ export function Showroom() {
           ))}
         </div>
       </div>
-
-      <ul
-        aria-label={t.showroom.viewsLabel}
-        className="mx-auto mt-6 flex w-full max-w-[calc(70svh*16/9)] snap-x gap-2 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:overflow-visible md:pb-0"
-      >
-        {views.map((view, index) => {
-          const active = index === current.index;
-          return (
-            <li key={view} className="w-[8.5rem] shrink-0 snap-start md:w-auto">
-              <button
-                type="button"
-                aria-current={active ? "true" : undefined}
-                onClick={() => show(index, current.paint, index > current.index ? 1 : -1)}
-                className="group block w-full cursor-pointer text-left"
-              >
-                <span
-                  className={cn(
-                    "relative block aspect-[16/9] overflow-hidden rounded-[2px] bg-concrete outline outline-2 outline-offset-2 transition-[outline-color] duration-300",
-                    active ? "outline-red" : "outline-transparent group-hover:outline-ink/30",
-                  )}
+      <div className="min-w-0 lg:col-start-1 lg:row-start-3">
+        <ul aria-label={t.showroom.viewsLabel} className="grid grid-cols-5 gap-2 py-1">
+          {views.map((view, index) => {
+            const active = index === presented.index;
+            return (
+              <li key={view} className="min-w-0">
+                <button
+                  type="button"
+                  aria-label={t.showroom.views[view]}
+                  aria-current={active ? "true" : undefined}
+                  onClick={() =>
+                    show(index, requested.current.paint, index > requested.current.index ? 1 : -1)
+                  }
+                  className="group block min-h-11 w-full cursor-pointer text-left"
                 >
-                  <ArtImage
-                    asset={showroomImage(current.paint, view)}
-                    alt=""
-                    sizes="(min-width: 768px) 16vw, 136px"
-                    compact
-                  />
-                </span>
-                <span className={cn("mt-2 block text-[0.9375rem]", active ? "font-semibold" : "text-stone")}>
-                  {t.showroom.views[view]}
-                </span>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+                  <span
+                    className={cn(
+                      "relative block aspect-[16/9] overflow-hidden rounded-[4px] bg-concrete outline outline-2 outline-offset-2 transition-[outline-color] duration-300",
+                      active ? "outline-red" : "outline-transparent group-hover:outline-ink/30",
+                    )}
+                  >
+                    <ArtImage
+                      asset={showroomImage(presented.paint, view)}
+                      alt=""
+                      sizes="(min-width: 1600px) 220px, (min-width: 1024px) 13vw, 18vw"
+                      compact
+                    />
+                  </span>
+                  <span
+                    className={cn(
+                      "mt-2 hidden text-[0.8125rem] sm:block",
+                      active ? "font-semibold" : "text-stone",
+                    )}
+                  >
+                    {t.showroom.views[view]}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+        <p className="t-label mt-4 hidden text-stone md:block">{t.showroom.hintKeys}</p>
+        <p className="t-label mt-4 text-stone md:hidden">{t.showroom.hintSwipe}</p>
+      </div>
     </div>
   );
 }

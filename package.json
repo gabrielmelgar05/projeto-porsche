@@ -8,10 +8,10 @@
     "preview": "node scripts/serve-static.mjs",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "images:list": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/list-images.mts",
+    "images:list": "node scripts/record-image-dimensions.mjs && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/list-images.mts",
     "images": "npm run images:list && node scripts/optimize-images.mjs",
     "images:audit": "node scripts/audit-images.mjs",
-    "brand": "node scripts/generate-mark.mjs && node scripts/build-social.mjs",
+    "brand": "node scripts/generate-mark.mjs && node scripts/build-social.mjs && node scripts/prepare-crest.mjs",
     "test:e2e": "playwright test",
     "check": "npm run lint && npm run typecheck && npm run build && npm run test:e2e",
     "format": "prettier --write src tests scripts \"*.{ts,mjs,json,md}\""

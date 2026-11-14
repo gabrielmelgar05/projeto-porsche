@@ -1,7 +1,6 @@
 /**
  * Builds social / touch images from the concept signature:
  *   public/og.png                    1200 × 630 Open Graph card
- *   public/icons/apple-touch-icon.png 180 × 180 (neutral, provisional)
  * Usage: npm run brand
  */
 import { readFileSync } from "node:fs";
@@ -26,9 +25,4 @@ const og = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" vi
 </svg>`;
 await sharp(Buffer.from(og)).png({ compressionLevel: 9 }).toFile("public/og.png");
 
-const icon = readFileSync("public/icons/favicon.svg", "utf8").replace(/<!--.*?-->/s, "");
-await sharp(Buffer.from(icon), { density: 600 })
-  .resize(180, 180)
-  .png()
-  .toFile("public/icons/apple-touch-icon.png");
 console.log("social images written");

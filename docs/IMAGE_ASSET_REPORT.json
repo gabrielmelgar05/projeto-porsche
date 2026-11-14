@@ -2,211 +2,225 @@
   "date": "2026-11-13",
   "generator": "Built-in image_gen; no API/CLI or paid third-party service used",
   "totals": {
-    "manifestEntries": 31,
-    "sourceFiles": 28,
-    "integratedEntries": 26,
-    "pendingOptionalEntries": 5,
-    "outputFiles": 166,
-    "masterBytes": 59393071,
-    "outputBytes": 6209036
+    "manifestEntries": 45,
+    "sourceFiles": 47,
+    "integratedEntries": 45,
+    "pendingOptionalEntries": 0,
+    "outputFiles": 280,
+    "masterBytes": 99700859,
+    "outputBytes": 8857507
   },
   "checks": {
     "nativeDimensions": true,
     "noUpscaling": true,
     "noDuplicateMasters": true,
     "allOutputsDecoded": true,
-    "heroAlphaPreserved": true,
-    "provenanceComplete": true
+    "singleComposedHero": true,
+    "provenanceComplete": true,
+    "localizedBadgesPreserveSurroundingPixels": true,
+    "crestIconsNativeFormats": true
   },
-  "pending": [
+  "pending": [],
+  "localizedEdits": [
     {
-      "id": "showroom-black-front34",
-      "master": "assets-src/images/showroom/gt3rs-black-front34.png",
-      "optional": true
+      "key": "showroom/gt3rs-white-front34",
+      "badges": 3,
+      "changedPixels": 592,
+      "outsidePatchPixels": 0
     },
     {
-      "id": "showroom-black-side",
-      "master": "assets-src/images/showroom/gt3rs-black-side.png",
-      "optional": true
+      "key": "showroom/gt3rs-white-side",
+      "badges": 2,
+      "changedPixels": 646,
+      "outsidePatchPixels": 0
     },
     {
-      "id": "showroom-black-rear34",
-      "master": "assets-src/images/showroom/gt3rs-black-rear34.png",
-      "optional": true
+      "key": "showroom/gt3rs-white-rear34",
+      "badges": 3,
+      "changedPixels": 1919,
+      "outsidePatchPixels": 0
     },
     {
-      "id": "showroom-black-front",
-      "master": "assets-src/images/showroom/gt3rs-black-front.png",
-      "optional": true
+      "key": "showroom/gt3rs-white-front",
+      "badges": 1,
+      "changedPixels": 242,
+      "outsidePatchPixels": 0
     },
     {
-      "id": "showroom-black-rear",
-      "master": "assets-src/images/showroom/gt3rs-black-rear.png",
-      "optional": true
+      "key": "showroom/gt3rs-white-rear",
+      "badges": 1,
+      "changedPixels": 1923,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "interior/gt3rs-interior-cockpit",
+      "badges": 1,
+      "changedPixels": 1267,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "interior/gt3rs-interior-wheel",
+      "badges": 1,
+      "changedPixels": 3523,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "details/gt3rs-detail-cockpit",
+      "badges": 1,
+      "changedPixels": 4622,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "precision/gt3rs-precision-brake",
+      "badges": 1,
+      "changedPixels": 1356,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "details/gt3rs-detail-wheel",
+      "badges": 1,
+      "changedPixels": 1811,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "precision/gt3rs-precision-side",
+      "badges": 2,
+      "changedPixels": 328,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "precision/gt3rs-precision-wing",
+      "badges": 1,
+      "changedPixels": 2328,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "finale/gt3rs-finale-rear34",
+      "badges": 3,
+      "changedPixels": 1273,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "finale/gt3rs-finale-rear34-portrait",
+      "badges": 3,
+      "changedPixels": 1286,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "hero/gt3rs-hero-road",
+      "badges": 2,
+      "changedPixels": 306,
+      "outsidePatchPixels": 0
+    },
+    {
+      "key": "hero/gt3rs-hero-road-portrait",
+      "badges": 2,
+      "changedPixels": 124,
+      "outsidePatchPixels": 0
     }
   ],
   "masters": [
     {
-      "id": "heroBackdrop",
-      "path": "assets-src/images/hero/gt3rs-hero-backdrop.png",
+      "id": "heroRoad",
+      "path": "assets-src/images/hero/gt3rs-hero-road.png",
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 2103953,
-      "alpha": false,
-      "sha256": "a786c78ba7cfdf9aac7b85c3f5778d1995b035fbab1973d4714065f216193675",
+      "bytes": 2725822,
+      "alpha": true,
+      "sha256": "1c9cc34c8964caa09558e11221d3d1f3da2531120a7c13a0e83eb840ccfb0fe1",
       "outputs": [
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-640.avif",
+          "path": "public/images/hero/gt3rs-hero-road-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 4641,
-          "alpha": false
+          "bytes": 13135,
+          "alpha": true
         },
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-640.webp",
+          "path": "public/images/hero/gt3rs-hero-road-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 5342,
+          "bytes": 20394,
           "alpha": false
         },
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-1280.avif",
+          "path": "public/images/hero/gt3rs-hero-road-1280.avif",
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 18944,
-          "alpha": false
+          "bytes": 45044,
+          "alpha": true
         },
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-1280.webp",
+          "path": "public/images/hero/gt3rs-hero-road-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 22958,
+          "bytes": 68798,
           "alpha": false
         },
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-1672.avif",
+          "path": "public/images/hero/gt3rs-hero-road-1672.avif",
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 36006,
-          "alpha": false
+          "bytes": 68828,
+          "alpha": true
         },
         {
-          "path": "public/images/hero/gt3rs-hero-backdrop-1672.webp",
+          "path": "public/images/hero/gt3rs-hero-road-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 40256,
+          "bytes": 106010,
           "alpha": false
         }
       ]
     },
     {
-      "id": "heroBackdrop",
-      "path": "assets-src/images/hero/gt3rs-hero-backdrop-portrait.png",
+      "id": "heroRoad",
+      "path": "assets-src/images/hero/gt3rs-hero-road-portrait.png",
       "format": "png",
       "width": 941,
       "height": 1672,
-      "bytes": 2063197,
-      "alpha": false,
-      "sha256": "0cdf6208e17f928352ad6d156b7adbc1fb4079d5b89b84207901f064e899a412",
-      "outputs": [
-        {
-          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-480.avif",
-          "format": "avif",
-          "width": 480,
-          "height": 853,
-          "bytes": 5607,
-          "alpha": false
-        },
-        {
-          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-480.webp",
-          "format": "webp",
-          "width": 480,
-          "height": 853,
-          "bytes": 7262,
-          "alpha": false
-        },
-        {
-          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-828.avif",
-          "format": "avif",
-          "width": 828,
-          "height": 1471,
-          "bytes": 21838,
-          "alpha": false
-        },
-        {
-          "path": "public/images/hero/gt3rs-hero-backdrop-portrait-828.webp",
-          "format": "webp",
-          "width": 828,
-          "height": 1471,
-          "bytes": 26238,
-          "alpha": false
-        }
-      ]
-    },
-    {
-      "id": "heroCar",
-      "path": "assets-src/images/hero/gt3rs-hero-car.png",
-      "format": "png",
-      "width": 1983,
-      "height": 793,
-      "bytes": 1719031,
+      "bytes": 2247391,
       "alpha": true,
-      "sha256": "117baa13dc9e706253986c4ab23c41683007f1942eb8bed70eba9abdae049e8b",
+      "sha256": "12148d07a2cdd417294947606588c0ea0daac5d156073008b79e0a846e7f9316",
       "outputs": [
         {
-          "path": "public/images/hero/gt3rs-hero-car-640.avif",
+          "path": "public/images/hero/gt3rs-hero-road-portrait-480.avif",
           "format": "avif",
-          "width": 640,
-          "height": 256,
-          "bytes": 17109,
+          "width": 480,
+          "height": 853,
+          "bytes": 18134,
           "alpha": true
         },
         {
-          "path": "public/images/hero/gt3rs-hero-car-640.webp",
+          "path": "public/images/hero/gt3rs-hero-road-portrait-480.webp",
           "format": "webp",
-          "width": 640,
-          "height": 256,
-          "bytes": 31594,
-          "alpha": true
+          "width": 480,
+          "height": 853,
+          "bytes": 26676,
+          "alpha": false
         },
         {
-          "path": "public/images/hero/gt3rs-hero-car-1280.avif",
+          "path": "public/images/hero/gt3rs-hero-road-portrait-828.avif",
           "format": "avif",
-          "width": 1280,
-          "height": 512,
-          "bytes": 45119,
+          "width": 828,
+          "height": 1471,
+          "bytes": 51612,
           "alpha": true
         },
         {
-          "path": "public/images/hero/gt3rs-hero-car-1280.webp",
+          "path": "public/images/hero/gt3rs-hero-road-portrait-828.webp",
           "format": "webp",
-          "width": 1280,
-          "height": 512,
-          "bytes": 86156,
-          "alpha": true
-        },
-        {
-          "path": "public/images/hero/gt3rs-hero-car-1920.avif",
-          "format": "avif",
-          "width": 1920,
-          "height": 768,
-          "bytes": 77109,
-          "alpha": true
-        },
-        {
-          "path": "public/images/hero/gt3rs-hero-car-1920.webp",
-          "format": "webp",
-          "width": 1920,
-          "height": 768,
-          "bytes": 153412,
-          "alpha": true
+          "width": 828,
+          "height": 1471,
+          "bytes": 73990,
+          "alpha": false
         }
       ]
     },
@@ -216,24 +230,24 @@
       "format": "png",
       "width": 1586,
       "height": 992,
-      "bytes": 2129445,
-      "alpha": false,
-      "sha256": "f43ca6c1d7f982b01a53157fcb187bf87b1b6536d3b994e66bc17fd4e4429245",
+      "bytes": 2410809,
+      "alpha": true,
+      "sha256": "4a37091d4abe6c1fc0113db4a17ec6bc16556c76216ead0427de2e5359562f93",
       "outputs": [
         {
           "path": "public/images/precision/gt3rs-precision-side-640.avif",
           "format": "avif",
           "width": 640,
           "height": 400,
-          "bytes": 6624,
-          "alpha": false
+          "bytes": 6845,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-side-640.webp",
           "format": "webp",
           "width": 640,
           "height": 400,
-          "bytes": 9754,
+          "bytes": 9826,
           "alpha": false
         },
         {
@@ -241,15 +255,15 @@
           "format": "avif",
           "width": 1280,
           "height": 801,
-          "bytes": 23407,
-          "alpha": false
+          "bytes": 23960,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-side-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 801,
-          "bytes": 34702,
+          "bytes": 33792,
           "alpha": false
         },
         {
@@ -257,15 +271,15 @@
           "format": "avif",
           "width": 1586,
           "height": 992,
-          "bytes": 37170,
-          "alpha": false
+          "bytes": 37512,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-side-1586.webp",
           "format": "webp",
           "width": 1586,
           "height": 992,
-          "bytes": 49278,
+          "bytes": 49400,
           "alpha": false
         }
       ]
@@ -276,24 +290,24 @@
       "format": "png",
       "width": 1586,
       "height": 992,
-      "bytes": 2322406,
-      "alpha": false,
-      "sha256": "95c6a967bbe551299c42109bdf695a1070317395b6949b6feef9f36c56742cb0",
+      "bytes": 3053896,
+      "alpha": true,
+      "sha256": "a3e4f4a9f0802c897471bb4d62502263ed2fa1477051dd70bc7898a820bd62f0",
       "outputs": [
         {
           "path": "public/images/precision/gt3rs-precision-brake-640.avif",
           "format": "avif",
           "width": 640,
           "height": 400,
-          "bytes": 15119,
-          "alpha": false
+          "bytes": 15330,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-brake-640.webp",
           "format": "webp",
           "width": 640,
           "height": 400,
-          "bytes": 24894,
+          "bytes": 25022,
           "alpha": false
         },
         {
@@ -301,15 +315,15 @@
           "format": "avif",
           "width": 1280,
           "height": 801,
-          "bytes": 46981,
-          "alpha": false
+          "bytes": 47296,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-brake-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 801,
-          "bytes": 74462,
+          "bytes": 74790,
           "alpha": false
         },
         {
@@ -317,15 +331,15 @@
           "format": "avif",
           "width": 1586,
           "height": 992,
-          "bytes": 65148,
-          "alpha": false
+          "bytes": 65472,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-brake-1586.webp",
           "format": "webp",
           "width": 1586,
           "height": 992,
-          "bytes": 101984,
+          "bytes": 102574,
           "alpha": false
         }
       ]
@@ -336,24 +350,24 @@
       "format": "png",
       "width": 1586,
       "height": 992,
-      "bytes": 1952183,
-      "alpha": false,
-      "sha256": "62c4115e6b6889eb0fb67a7544dc3d13f29b0a0f10550aa78ba0442ac37c4fcb",
+      "bytes": 2233595,
+      "alpha": true,
+      "sha256": "dd866aa96b2079b754b19ab82cb12438ba9b0772656ab620be77ecd174f71f69",
       "outputs": [
         {
           "path": "public/images/precision/gt3rs-precision-wing-640.avif",
           "format": "avif",
           "width": 640,
           "height": 400,
-          "bytes": 8571,
-          "alpha": false
+          "bytes": 8840,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-wing-640.webp",
           "format": "webp",
           "width": 640,
           "height": 400,
-          "bytes": 13954,
+          "bytes": 14034,
           "alpha": false
         },
         {
@@ -361,15 +375,15 @@
           "format": "avif",
           "width": 1280,
           "height": 801,
-          "bytes": 26346,
-          "alpha": false
+          "bytes": 26606,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-wing-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 801,
-          "bytes": 44492,
+          "bytes": 44632,
           "alpha": false
         },
         {
@@ -377,15 +391,15 @@
           "format": "avif",
           "width": 1586,
           "height": 992,
-          "bytes": 36280,
-          "alpha": false
+          "bytes": 36791,
+          "alpha": true
         },
         {
           "path": "public/images/precision/gt3rs-precision-wing-1586.webp",
           "format": "webp",
           "width": 1586,
           "height": 992,
-          "bytes": 62640,
+          "bytes": 62798,
           "alpha": false
         }
       ]
@@ -636,24 +650,24 @@
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 2338952,
-      "alpha": false,
-      "sha256": "b7eba32ad1598b169fd754c2b44f61931faa9003072b454d32fba908d9c799ba",
+      "bytes": 2902428,
+      "alpha": true,
+      "sha256": "d6eca93789b4c970db2b0fdcfe54530ea0a2ddc118cce3f6e41baf27bddec23b",
       "outputs": [
         {
           "path": "public/images/interior/gt3rs-interior-cockpit-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 14811,
-          "alpha": false
+          "bytes": 15114,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-cockpit-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 23186,
+          "bytes": 23240,
           "alpha": false
         },
         {
@@ -661,15 +675,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 44240,
-          "alpha": false
+          "bytes": 44691,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-cockpit-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 67900,
+          "bytes": 68174,
           "alpha": false
         },
         {
@@ -677,15 +691,15 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 66073,
-          "alpha": false
+          "bytes": 66553,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-cockpit-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 98762,
+          "bytes": 99402,
           "alpha": false
         }
       ]
@@ -696,24 +710,24 @@
       "format": "png",
       "width": 1122,
       "height": 1402,
-      "bytes": 2237559,
-      "alpha": false,
-      "sha256": "bdb695885c77a3d18decc67c964a3e0fe0706fa1d5ea33e046a0c5d1cac738a3",
+      "bytes": 2678156,
+      "alpha": true,
+      "sha256": "90f1fe0b0e5945e137cd6c17fed132c42e1efb8a913e4ef8535d814e4f191e85",
       "outputs": [
         {
           "path": "public/images/interior/gt3rs-interior-wheel-480.avif",
           "format": "avif",
           "width": 480,
           "height": 600,
-          "bytes": 13664,
-          "alpha": false
+          "bytes": 14116,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-wheel-480.webp",
           "format": "webp",
           "width": 480,
           "height": 600,
-          "bytes": 19834,
+          "bytes": 20138,
           "alpha": false
         },
         {
@@ -721,15 +735,15 @@
           "format": "avif",
           "width": 960,
           "height": 1200,
-          "bytes": 44053,
-          "alpha": false
+          "bytes": 44904,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-wheel-960.webp",
           "format": "webp",
           "width": 960,
           "height": 1200,
-          "bytes": 63318,
+          "bytes": 64348,
           "alpha": false
         },
         {
@@ -737,15 +751,15 @@
           "format": "avif",
           "width": 1122,
           "height": 1402,
-          "bytes": 60149,
-          "alpha": false
+          "bytes": 61039,
+          "alpha": true
         },
         {
           "path": "public/images/interior/gt3rs-interior-wheel-1122.webp",
           "format": "webp",
           "width": 1122,
           "height": 1402,
-          "bytes": 82018,
+          "bytes": 83126,
           "alpha": false
         }
       ]
@@ -876,24 +890,24 @@
       "format": "png",
       "width": 1914,
       "height": 822,
-      "bytes": 2086810,
-      "alpha": false,
-      "sha256": "4d3fe889f21834b1f22ce2a68340832b6cd8828431ba06b9ee323b4c963d8fac",
+      "bytes": 2660711,
+      "alpha": true,
+      "sha256": "b8c66915d3e1f93fff812ac1295fd0e4a6be756d3ee3eb7833fa9c2a959ee407",
       "outputs": [
         {
           "path": "public/images/finale/gt3rs-finale-rear34-640.avif",
           "format": "avif",
           "width": 640,
           "height": 275,
-          "bytes": 7041,
-          "alpha": false
+          "bytes": 7212,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-640.webp",
           "format": "webp",
           "width": 640,
           "height": 275,
-          "bytes": 9786,
+          "bytes": 9796,
           "alpha": false
         },
         {
@@ -901,15 +915,15 @@
           "format": "avif",
           "width": 1280,
           "height": 550,
-          "bytes": 23077,
-          "alpha": false
+          "bytes": 23378,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 550,
-          "bytes": 30534,
+          "bytes": 30662,
           "alpha": false
         },
         {
@@ -917,15 +931,15 @@
           "format": "avif",
           "width": 1914,
           "height": 822,
-          "bytes": 46229,
-          "alpha": false
+          "bytes": 46524,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-1914.webp",
           "format": "webp",
           "width": 1914,
           "height": 822,
-          "bytes": 61182,
+          "bytes": 61416,
           "alpha": false
         }
       ]
@@ -936,24 +950,24 @@
       "format": "png",
       "width": 1086,
       "height": 1448,
-      "bytes": 2017359,
-      "alpha": false,
-      "sha256": "bc8ded311986f2687d9df5df8675ca1fd0f14821d9d4cf292422b866dd458d43",
+      "bytes": 2451131,
+      "alpha": true,
+      "sha256": "09aea11763195c50f908a5ddc9614932ffa31a95884aed2c0d71f5e66d8dde8d",
       "outputs": [
         {
           "path": "public/images/finale/gt3rs-finale-rear34-portrait-480.avif",
           "format": "avif",
           "width": 480,
           "height": 640,
-          "bytes": 9227,
-          "alpha": false
+          "bytes": 9485,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-portrait-480.webp",
           "format": "webp",
           "width": 480,
           "height": 640,
-          "bytes": 12830,
+          "bytes": 12856,
           "alpha": false
         },
         {
@@ -961,15 +975,15 @@
           "format": "avif",
           "width": 828,
           "height": 1104,
-          "bytes": 23611,
-          "alpha": false
+          "bytes": 23947,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-portrait-828.webp",
           "format": "webp",
           "width": 828,
           "height": 1104,
-          "bytes": 32824,
+          "bytes": 32922,
           "alpha": false
         },
         {
@@ -977,15 +991,15 @@
           "format": "avif",
           "width": 1080,
           "height": 1440,
-          "bytes": 39860,
-          "alpha": false
+          "bytes": 40029,
+          "alpha": true
         },
         {
           "path": "public/images/finale/gt3rs-finale-rear34-portrait-1080.webp",
           "format": "webp",
           "width": 1080,
           "height": 1440,
-          "bytes": 51592,
+          "bytes": 51810,
           "alpha": false
         }
       ]
@@ -1116,24 +1130,24 @@
       "format": "png",
       "width": 1536,
       "height": 1024,
-      "bytes": 2479395,
-      "alpha": false,
-      "sha256": "09263aba122e9a0ebad41c08319c8a384f13940c8755364d9151628df1808193",
+      "bytes": 3163709,
+      "alpha": true,
+      "sha256": "9c59bb44e9862545380d5712a51c112775c6c8b724a6636144d40446b393cee2",
       "outputs": [
         {
           "path": "public/images/details/gt3rs-detail-wheel-480.avif",
           "format": "avif",
           "width": 480,
           "height": 320,
-          "bytes": 11068,
-          "alpha": false
+          "bytes": 11211,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-wheel-480.webp",
           "format": "webp",
           "width": 480,
           "height": 320,
-          "bytes": 18136,
+          "bytes": 18212,
           "alpha": false
         },
         {
@@ -1141,15 +1155,15 @@
           "format": "avif",
           "width": 960,
           "height": 640,
-          "bytes": 32746,
-          "alpha": false
+          "bytes": 33151,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-wheel-960.webp",
           "format": "webp",
           "width": 960,
           "height": 640,
-          "bytes": 53572,
+          "bytes": 53882,
           "alpha": false
         },
         {
@@ -1157,15 +1171,15 @@
           "format": "avif",
           "width": 1440,
           "height": 960,
-          "bytes": 62801,
-          "alpha": false
+          "bytes": 63462,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-wheel-1440.webp",
           "format": "webp",
           "width": 1440,
           "height": 960,
-          "bytes": 98960,
+          "bytes": 99634,
           "alpha": false
         }
       ]
@@ -1296,24 +1310,24 @@
       "format": "png",
       "width": 1536,
       "height": 1024,
-      "bytes": 2219206,
-      "alpha": false,
-      "sha256": "17f34c4229cd68fa9ea7a3459de8a708b41d814b525f44cb87e3e64203766671",
+      "bytes": 2555285,
+      "alpha": true,
+      "sha256": "4eae619ec10c461132b61a17a2897233882eef591b09cb3314908d7a4ed486d3",
       "outputs": [
         {
           "path": "public/images/details/gt3rs-detail-cockpit-480.avif",
           "format": "avif",
           "width": 480,
           "height": 320,
-          "bytes": 8249,
-          "alpha": false
+          "bytes": 8558,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-cockpit-480.webp",
           "format": "webp",
           "width": 480,
           "height": 320,
-          "bytes": 11628,
+          "bytes": 11818,
           "alpha": false
         },
         {
@@ -1321,15 +1335,15 @@
           "format": "avif",
           "width": 960,
           "height": 640,
-          "bytes": 25243,
-          "alpha": false
+          "bytes": 25957,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-cockpit-960.webp",
           "format": "webp",
           "width": 960,
           "height": 640,
-          "bytes": 34470,
+          "bytes": 35174,
           "alpha": false
         },
         {
@@ -1337,15 +1351,15 @@
           "format": "avif",
           "width": 1440,
           "height": 960,
-          "bytes": 52968,
-          "alpha": false
+          "bytes": 53880,
+          "alpha": true
         },
         {
           "path": "public/images/details/gt3rs-detail-cockpit-1440.webp",
           "format": "webp",
           "width": 1440,
           "height": 960,
-          "bytes": 70608,
+          "bytes": 71494,
           "alpha": false
         }
       ]
@@ -1411,29 +1425,329 @@
       ]
     },
     {
+      "id": "showroom-ice-grey-front34",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-front34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1821779,
+      "alpha": false,
+      "sha256": "9896bea694130558b81be30e05a7a1140b49dc797ab3f9b8363cb33790516d9a",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7882,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11832,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 20683,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 33576,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 31521,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 50564,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-ice-grey-side",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-side.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1891288,
+      "alpha": false,
+      "sha256": "468ee83f584a225902c6864ccea19d67688cfb6672fba9aea4a67c4d75e61c51",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 8646,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 13442,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 22530,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 39050,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 35319,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-side-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 58618,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-ice-grey-rear34",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-rear34.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1794064,
+      "alpha": false,
+      "sha256": "4c3dd9fb8e0390c920244dc13ffc9c803b6292706c4facdaf0a6e663c4a5a613",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7769,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11724,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 20230,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 33816,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 30117,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear34-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 50184,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-ice-grey-front",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-front.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1761672,
+      "alpha": false,
+      "sha256": "000828084e1339c0d10245d6be66bf3974516f0efe3835f3e865ad72e7340217",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 5719,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 8160,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 14820,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 23886,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 22724,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-front-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 37036,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-ice-grey-rear",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-rear.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1666726,
+      "alpha": false,
+      "sha256": "473172601313898db47eb1a09905aad5a1efc1298e44472f0f8ee219cbc524a3",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 4930,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 6890,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 12596,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 19020,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 19508,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-ice-grey-rear-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 28012,
+          "alpha": false
+        }
+      ]
+    },
+    {
       "id": "showroom-white-front34",
       "path": "assets-src/images/showroom/gt3rs-white-front34.png",
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 1870893,
-      "alpha": false,
-      "sha256": "583a4cc21339be9957c0232bdca751f968ee0875d10b78d964dad9ff3eef9b7d",
+      "bytes": 2187153,
+      "alpha": true,
+      "sha256": "cb3de2c58910a6ceeead567bcb67830767155c09c0c06289f4e66b868aa41841",
       "outputs": [
         {
           "path": "public/images/showroom/gt3rs-white-front34-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 7676,
-          "alpha": false
+          "bytes": 7916,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front34-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 11856,
+          "bytes": 11928,
           "alpha": false
         },
         {
@@ -1441,15 +1755,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 20560,
-          "alpha": false
+          "bytes": 20977,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front34-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 33938,
+          "bytes": 34112,
           "alpha": false
         },
         {
@@ -1457,15 +1771,15 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 31659,
-          "alpha": false
+          "bytes": 31810,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front34-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 51618,
+          "bytes": 51886,
           "alpha": false
         }
       ]
@@ -1476,24 +1790,24 @@
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 1979921,
-      "alpha": false,
-      "sha256": "e535d49de20159fab294a69d1acda4cb791b15891f2b0465ea02a6de24d16b2a",
+      "bytes": 2334703,
+      "alpha": true,
+      "sha256": "4f2274c3e952c1e77841094b45a403ee04616b3580a1f78e7630ffe7bf28e339",
       "outputs": [
         {
           "path": "public/images/showroom/gt3rs-white-side-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 8484,
-          "alpha": false
+          "bytes": 8659,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-side-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 12498,
+          "bytes": 12536,
           "alpha": false
         },
         {
@@ -1501,15 +1815,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 22151,
-          "alpha": false
+          "bytes": 22334,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-side-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 37064,
+          "bytes": 37418,
           "alpha": false
         },
         {
@@ -1517,15 +1831,15 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 36320,
-          "alpha": false
+          "bytes": 36425,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-side-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 56750,
+          "bytes": 56554,
           "alpha": false
         }
       ]
@@ -1536,24 +1850,24 @@
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 1890731,
-      "alpha": false,
-      "sha256": "e23d129817dfde1f91942a6363ce2b653c4e60c0816bc046d363bc3729c625c3",
+      "bytes": 2256946,
+      "alpha": true,
+      "sha256": "c13bd1333cad2c7f43e1797515dd5fdc7481d71cd0637369c8d64766300b9ed9",
       "outputs": [
         {
           "path": "public/images/showroom/gt3rs-white-rear34-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 8011,
-          "alpha": false
+          "bytes": 8219,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear34-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 11836,
+          "bytes": 11992,
           "alpha": false
         },
         {
@@ -1561,15 +1875,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 21109,
-          "alpha": false
+          "bytes": 21470,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear34-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 35346,
+          "bytes": 35550,
           "alpha": false
         },
         {
@@ -1577,15 +1891,15 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 32398,
-          "alpha": false
+          "bytes": 32730,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear34-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 53434,
+          "bytes": 53970,
           "alpha": false
         }
       ]
@@ -1596,24 +1910,24 @@
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 1807354,
-      "alpha": false,
-      "sha256": "2adefb9a486ba81f0ca6ffbc95a0ab3d56a29a30ab07c471cd54ae68251eae70",
+      "bytes": 2007568,
+      "alpha": true,
+      "sha256": "b36a470867dce8cb0d80a59720155fd5e5990c54588a1da6e17fb01e4e9ce842",
       "outputs": [
         {
           "path": "public/images/showroom/gt3rs-white-front-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 5676,
-          "alpha": false
+          "bytes": 5818,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 7948,
+          "bytes": 7984,
           "alpha": false
         },
         {
@@ -1621,15 +1935,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 14993,
-          "alpha": false
+          "bytes": 15222,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 22990,
+          "bytes": 22834,
           "alpha": false
         },
         {
@@ -1637,15 +1951,15 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 23362,
-          "alpha": false
+          "bytes": 23834,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-front-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 36236,
+          "bytes": 36162,
           "alpha": false
         }
       ]
@@ -1656,24 +1970,24 @@
       "format": "png",
       "width": 1672,
       "height": 941,
-      "bytes": 1734994,
-      "alpha": false,
-      "sha256": "c40c3b1f64a4c0d067b6f1f01ebbed69db3eb47774f9bdfc9d386007d163e834",
+      "bytes": 1965667,
+      "alpha": true,
+      "sha256": "2e4e45eb98c0880527d0e8f83f6a88f2aef2b10e03da4b5ecc24771064e7cf92",
       "outputs": [
         {
           "path": "public/images/showroom/gt3rs-white-rear-640.avif",
           "format": "avif",
           "width": 640,
           "height": 360,
-          "bytes": 4887,
-          "alpha": false
+          "bytes": 5170,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear-640.webp",
           "format": "webp",
           "width": 640,
           "height": 360,
-          "bytes": 6914,
+          "bytes": 7050,
           "alpha": false
         },
         {
@@ -1681,15 +1995,15 @@
           "format": "avif",
           "width": 1280,
           "height": 720,
-          "bytes": 12736,
-          "alpha": false
+          "bytes": 13131,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear-1280.webp",
           "format": "webp",
           "width": 1280,
           "height": 720,
-          "bytes": 20090,
+          "bytes": 20456,
           "alpha": false
         },
         {
@@ -1697,15 +2011,915 @@
           "format": "avif",
           "width": 1672,
           "height": 941,
-          "bytes": 20219,
-          "alpha": false
+          "bytes": 20601,
+          "alpha": true
         },
         {
           "path": "public/images/showroom/gt3rs-white-rear-1672.webp",
           "format": "webp",
           "width": 1672,
           "height": 941,
-          "bytes": 30356,
+          "bytes": 30854,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-matte-black-front34",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-front34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1749965,
+      "alpha": false,
+      "sha256": "1fe292c8fa97a237f4c75fe9849ab0e5827714c057a9b138fe883a777b17fcdd",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7184,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 9948,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 18743,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 28168,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 27982,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 43580,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-matte-black-side",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-side.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1816390,
+      "alpha": false,
+      "sha256": "46162bd33a70b62f9c37327ca18e28f02e9c0bda211af8c5acf1d239553bf58c",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7989,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 10750,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 19742,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 30910,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 29884,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-side-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 46542,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-matte-black-rear34",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-rear34.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1776976,
+      "alpha": false,
+      "sha256": "7cf7f8e07e20d249a722c41091253a0ec16e1c43a906c3e578a100e443f295aa",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7418,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 10384,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 19412,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 30080,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 28094,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear34-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 44238,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-matte-black-front",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-front.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1715962,
+      "alpha": false,
+      "sha256": "67b7c66ae9dc7760966f079bd40b2f8ccd096472e2edeb0148e215072a3de485",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 5257,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 7078,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 13709,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 20300,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 20973,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-front-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 31400,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-matte-black-rear",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-rear.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1639149,
+      "alpha": false,
+      "sha256": "d33148b83a98ff3a2986333dac1cb5b98d27b23df4778d7603265db63492ac6c",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 4732,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 6360,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 11853,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 17170,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 18193,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-matte-black-rear-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 25528,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-front34",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-front34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1807680,
+      "alpha": false,
+      "sha256": "ad4b1eba62ca5537eb00315ed0bba5ba5db1c1a575e42af57840b6bc677628c8",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7683,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11570,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 20259,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 32546,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 30453,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 48110,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-side",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-side.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1955689,
+      "alpha": false,
+      "sha256": "2b8596d2a447405eb44a94807afef5741b69efbef96c0941ca5b387c87274927",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 8682,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 13280,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 21984,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 38704,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 35670,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-side-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 58798,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-rear34",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-rear34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1865461,
+      "alpha": false,
+      "sha256": "f65a253fdc31b1cefc04ac31c1a3a60c2441605cc6a1bd61993481b4ed26833c",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 7986,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 11944,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 21326,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 35434,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 32496,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 53620,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-front",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-front.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1775261,
+      "alpha": false,
+      "sha256": "222c66d7b68547d9c7eccd9defcba78beb21c40b5d3b3f829715f753ebed496c",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 5605,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 7940,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 14524,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 22708,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 22359,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-front-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 34298,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-rear",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-rear.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1699067,
+      "alpha": false,
+      "sha256": "bcf176c2ccb98b3df64d94ac5af062bcee0e848308ac817f43d474fd4c919373",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 4872,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 6958,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 12406,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 19538,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 19285,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-gt-silver-rear-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 29002,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-front34",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-front34.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1766774,
+      "alpha": false,
+      "sha256": "4dd365bf355efa1ec0c5ecef64e7ba53b1eea357cc4c156f17216e2628095cd4",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 9104,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 13052,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 23581,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 36884,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 34852,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front34-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 54882,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-side",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-side.png",
+      "format": "png",
+      "width": 1670,
+      "height": 941,
+      "bytes": 1774330,
+      "alpha": false,
+      "sha256": "a6a017fec34f9c073f234e62f5515cc0cb1cba468c6d1c9857623a754bd6fe4e",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 361,
+          "bytes": 9932,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 361,
+          "bytes": 14084,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 25101,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 40098,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-1670.avif",
+          "format": "avif",
+          "width": 1670,
+          "height": 941,
+          "bytes": 37015,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-side-1670.webp",
+          "format": "webp",
+          "width": 1670,
+          "height": 941,
+          "bytes": 58432,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-rear34",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-rear34.png",
+      "format": "png",
+      "width": 1671,
+      "height": 941,
+      "bytes": 1782360,
+      "alpha": false,
+      "sha256": "af1f67d58a27bc0563352af66f13e809fa313db6d4afb9f03191deb998fd63e3",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 9003,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 12994,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 721,
+          "bytes": 23112,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 721,
+          "bytes": 37648,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-1671.avif",
+          "format": "avif",
+          "width": 1671,
+          "height": 941,
+          "bytes": 34320,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear34-1671.webp",
+          "format": "webp",
+          "width": 1671,
+          "height": 941,
+          "bytes": 55372,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-front",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-front.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1714507,
+      "alpha": false,
+      "sha256": "3d5066724b5d8d94f3f2defb026d786a0df1b0640f849e5e2041a3fdfa900e3f",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 6021,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 8806,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 15567,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 24104,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 22980,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-front-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 35910,
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-rear",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-rear.png",
+      "format": "png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 1651107,
+      "alpha": false,
+      "sha256": "e313fc7b5b76a327e9ade56639c58fbf8b5d3ca78307b071c6f49dfa08eb774a",
+      "outputs": [
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 360,
+          "bytes": 5473,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 7890,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-1280.avif",
+          "format": "avif",
+          "width": 1280,
+          "height": 720,
+          "bytes": 14090,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-1280.webp",
+          "format": "webp",
+          "width": 1280,
+          "height": 720,
+          "bytes": 21856,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-1672.avif",
+          "format": "avif",
+          "width": 1672,
+          "height": 941,
+          "bytes": 21441,
+          "alpha": false
+        },
+        {
+          "path": "public/images/showroom/gt3rs-guards-red-rear-1672.webp",
+          "format": "webp",
+          "width": 1672,
+          "height": 941,
+          "bytes": 32126,
           "alpha": false
         }
       ]

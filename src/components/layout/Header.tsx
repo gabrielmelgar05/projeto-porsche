@@ -11,7 +11,7 @@ import { LanguageToggle } from "./LanguageToggle";
 import { MobileMenu } from "./MobileMenu";
 
 /**
- * Fixed header. Reads `data-tone` from the section beneath it, turns solid
+ * Fixed header. Reads `data-tone` from the section beneath it, deepens its glass
  * once the page scrolls, steps aside while reading down and returns on the
  * way up. Its contents (`[data-header-inner]`) are animated by the hero intro.
  */
@@ -77,23 +77,20 @@ export function Header() {
       )}
     >
       <div
-        aria-hidden="true"
-        className={cn(
-          "absolute inset-0 border-b transition-[opacity,background-color] duration-500",
-          solid ? "opacity-100" : "opacity-0",
-          dark ? "border-white/10 bg-ink/90" : "border-ink/10 bg-paper/92",
-        )}
-      />
-      <div
         data-header-inner=""
-        className="frame relative flex h-[var(--header-h)] items-center justify-between gap-6"
+        className={cn(
+          "relative mx-auto my-3 flex h-[var(--header-h)] w-[calc(100%-2*var(--gutter))] max-w-[calc(var(--frame-max)-2*var(--gutter))] items-center justify-between gap-2 rounded-[12px] border px-3 shadow-[0_8px_28px_rgb(0_0_0/0.10),inset_0_1px_0_rgb(255_255_255/0.05)] backdrop-blur-[24px] transition-[background-color,border-color] duration-500 sm:gap-4 sm:px-4 lg:my-4 lg:px-6 lg:backdrop-blur-[32px]",
+          dark
+            ? cn("border-white/15", solid ? "bg-graphite/65" : "bg-graphite/45")
+            : cn("border-ink/10", solid ? "bg-mineral/75" : "bg-mineral/65"),
+        )}
       >
         <a href="#top" aria-label={t.a11y.home} className="-mx-2 flex min-h-11 items-center px-2">
-          <PerformanceMark letterColor="currentColor" className="w-[6.75rem] lg:w-[8.25rem]" />
+          <PerformanceMark letterColor="currentColor" className="w-[5.75rem] sm:w-[6.75rem] lg:w-[7.5rem]" />
         </a>
 
         <nav aria-label={t.a11y.mainNav} className="hidden lg:block">
-          <ul className="flex items-center gap-7 xl:gap-9">
+          <ul className="flex items-center gap-5 xl:gap-8">
             {sections.map((id) => (
               <li key={id}>
                 <a

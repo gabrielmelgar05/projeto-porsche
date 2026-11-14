@@ -38,16 +38,14 @@ CSS transitions (hover/focus) use 300–700 ms with `--ease-out-expo`.
 ## Hero reveal — `components/sections/Hero.tsx`
 
 Registered paused and started by the preloader (`lib/animations/intro.ts`), in this order:
-1. Vehicle — backdrop opens from an inset frame and settles from 1.25; the "PORSCHE" letters rise
-   behind; the car drives in from the right (xPercent 18 → 0) as its floor shadow spreads
-2. Headline — characters rise out of masks
-3. Eyebrow + lede
-4. Header
-5. CTA link
-6. Indicators — spec cards (stagger), scroll cue
+1. Single road photograph — inset mask opens; scale settles from1.055 to1
+2. Floating header fades and rises into place
+3. Headline characters rise out of masks
+4. Subtitle and showroom CTA enter
+5. Discreet model label and scroll cue enter
 
-Exit (desktop, scrubbed): depth layers separate — the backdrop sinks, the word slides left, the car
-drives on to the right, content fades. Mobile: the car drives on, cards fade.
+Desktop exit adds a small5% photo drift and1.035 scale while copy fades. Mobile fades the copy;
+car and environment remain one photograph. Reduced motion uses a short fade.
 
 ## Sections
 
@@ -65,11 +63,12 @@ drives on to the right, content fades. Mobile: the car drives on, cards fade.
 
 - Position indicator: five segments, the active one in red (no numbers).
 - Next / previous: incoming view wipes in from the travel direction (clip-path, 0.9 s, curtain),
-  settles from scale 1.08; the outgoing view drifts 6 % the other way.
+  settles from scale 1.035; the outgoing view drifts 3 % the other way.
 - Paint change: crossfade on identical framing (no warping).
 - Image readiness: the incoming photograph decodes before the transition starts. The last completed
   view remains visible during slow requests or rapid selection; scoped cleanup cancels stale decodes
-  and animations. Mask/crossfade durations remain unchanged.
+  and animations. The checked paint and active view update when the transition finishes; failures retain
+  the previous view and offer retry.
 - Inputs: buttons, thumbnails, ←/→ on the focused stage, swipe (pointer events, 48 px threshold).
 - Announcements: polite live region ("Side profile, view 2 of 5").
 

@@ -89,7 +89,7 @@ Touch targets ≥ 44 × 44 px. Hover effects are never the only signal.
 
 | Section | < 1024 px | ≥ 1024 px |
 |---|---|---|
-| Hero | <768: stacked headline/lede, car 96vw; 768–1023: split top block, car 78vw; 4 spec columns ≥640; portrait backdrop <768 | Headline left / lede right, car 62vw over the "PORSCHE" word, 4 spec cards in a row |
+| Hero | Full-screen road photograph with portrait art direction; centred title and CTA; floating glass header | Single composed road photograph; centred upper copy, discreet lower metadata |
 | Precision | Three stacked chapters with their own images | Pinned scene, images replace each other |
 | Aerodynamics | Single column; main wing image stays 16:10, portraits full width | Asymmetric grid, parallax portraits |
 | Showroom | Swipe, scrolling thumbnail strip, swipe hint | Arrow keys, 5-column thumbnails |

@@ -1,8 +1,8 @@
 [
   {
-    "id": "heroBackdrop",
+    "id": "heroRoad",
     "dir": "hero",
-    "name": "gt3rs-hero-backdrop",
+    "name": "gt3rs-hero-road",
     "width": 1672,
     "height": 941,
     "widths": [
@@ -11,22 +11,11 @@
       1672
     ],
     "mobile": {
-      "name": "gt3rs-hero-backdrop-portrait",
+      "name": "gt3rs-hero-road-portrait",
       "width": 941,
-      "height": 1672
+      "height": 1672,
+      "media": "(max-width: 1023px), (max-aspect-ratio: 4/3)"
     }
-  },
-  {
-    "id": "heroCar",
-    "dir": "hero",
-    "name": "gt3rs-hero-car",
-    "width": 1983,
-    "height": 793,
-    "widths": [
-      640,
-      1280,
-      1920
-    ]
   },
   {
     "id": "precisionSide",
@@ -262,6 +251,66 @@
     ]
   },
   {
+    "id": "showroom-ice-grey-front34",
+    "dir": "showroom",
+    "name": "gt3rs-ice-grey-front34",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-ice-grey-side",
+    "dir": "showroom",
+    "name": "gt3rs-ice-grey-side",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-ice-grey-rear34",
+    "dir": "showroom",
+    "name": "gt3rs-ice-grey-rear34",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-ice-grey-front",
+    "dir": "showroom",
+    "name": "gt3rs-ice-grey-front",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-ice-grey-rear",
+    "dir": "showroom",
+    "name": "gt3rs-ice-grey-rear",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
     "id": "showroom-white-front34",
     "dir": "showroom",
     "name": "gt3rs-white-front34",
@@ -322,9 +371,9 @@
     ]
   },
   {
-    "id": "showroom-black-front34",
+    "id": "showroom-matte-black-front34",
     "dir": "showroom",
-    "name": "gt3rs-black-front34",
+    "name": "gt3rs-matte-black-front34",
     "width": 1672,
     "height": 941,
     "widths": [
@@ -334,9 +383,33 @@
     ]
   },
   {
-    "id": "showroom-black-side",
+    "id": "showroom-matte-black-side",
     "dir": "showroom",
-    "name": "gt3rs-black-side",
+    "name": "gt3rs-matte-black-side",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-matte-black-rear34",
+    "dir": "showroom",
+    "name": "gt3rs-matte-black-rear34",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-matte-black-front",
+    "dir": "showroom",
+    "name": "gt3rs-matte-black-front",
     "width": 1672,
     "height": 941,
     "widths": [
@@ -346,9 +419,9 @@
     ]
   },
   {
-    "id": "showroom-black-rear34",
+    "id": "showroom-matte-black-rear",
     "dir": "showroom",
-    "name": "gt3rs-black-rear34",
+    "name": "gt3rs-matte-black-rear",
     "width": 1672,
     "height": 941,
     "widths": [
@@ -358,9 +431,9 @@
     ]
   },
   {
-    "id": "showroom-black-front",
+    "id": "showroom-gt-silver-front34",
     "dir": "showroom",
-    "name": "gt3rs-black-front",
+    "name": "gt3rs-gt-silver-front34",
     "width": 1672,
     "height": 941,
     "widths": [
@@ -370,9 +443,105 @@
     ]
   },
   {
-    "id": "showroom-black-rear",
+    "id": "showroom-gt-silver-side",
     "dir": "showroom",
-    "name": "gt3rs-black-rear",
+    "name": "gt3rs-gt-silver-side",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-gt-silver-rear34",
+    "dir": "showroom",
+    "name": "gt3rs-gt-silver-rear34",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-gt-silver-front",
+    "dir": "showroom",
+    "name": "gt3rs-gt-silver-front",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-gt-silver-rear",
+    "dir": "showroom",
+    "name": "gt3rs-gt-silver-rear",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-guards-red-front34",
+    "dir": "showroom",
+    "name": "gt3rs-guards-red-front34",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-guards-red-side",
+    "dir": "showroom",
+    "name": "gt3rs-guards-red-side",
+    "width": 1670,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1670
+    ]
+  },
+  {
+    "id": "showroom-guards-red-rear34",
+    "dir": "showroom",
+    "name": "gt3rs-guards-red-rear34",
+    "width": 1671,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1671
+    ]
+  },
+  {
+    "id": "showroom-guards-red-front",
+    "dir": "showroom",
+    "name": "gt3rs-guards-red-front",
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      640,
+      1280,
+      1672
+    ]
+  },
+  {
+    "id": "showroom-guards-red-rear",
+    "dir": "showroom",
+    "name": "gt3rs-guards-red-rear",
     "width": 1672,
     "height": 941,
     "widths": [

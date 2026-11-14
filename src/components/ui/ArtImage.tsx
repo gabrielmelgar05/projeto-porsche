@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { ImageAsset, Tone } from "@/types";
-import { isAvailable } from "@/data/image-assets";
+import { imageUrl, isAvailable } from "@/data/image-assets";
 import { useI18n } from "@/lib/i18n/use-i18n";
 import { cn } from "@/lib/cn";
 import { ImageFallback } from "./ImageFallback";
@@ -10,7 +10,7 @@ import { ImageFallback } from "./ImageFallback";
 const MOBILE_WIDTHS = [480, 828, 1080];
 
 const srcSet = (dir: string, name: string, widths: readonly number[], format: "avif" | "webp") =>
-  widths.map((w) => `/images/${dir}/${name}-${w}.${format} ${w}w`).join(", ");
+  widths.map((w) => `${imageUrl(dir, name, w, format)} ${w}w`).join(", ");
 
 interface ArtImageProps {
   asset: ImageAsset;
@@ -66,13 +66,13 @@ export function ArtImage({
       {mobile ? (
         <>
           <source
-            media="(max-width: 767px)"
+            media={mobile.media ?? "(max-width: 767px)"}
             type="image/avif"
             srcSet={srcSet(asset.dir, mobile.name, mobileWidths, "avif")}
             sizes="100vw"
           />
           <source
-            media="(max-width: 767px)"
+            media={mobile.media ?? "(max-width: 767px)"}
             type="image/webp"
             srcSet={srcSet(asset.dir, mobile.name, mobileWidths, "webp")}
             sizes="100vw"
@@ -82,7 +82,7 @@ export function ArtImage({
       <source type="image/avif" srcSet={srcSet(asset.dir, asset.name, widths, "avif")} sizes={sizes} />
       <source type="image/webp" srcSet={srcSet(asset.dir, asset.name, widths, "webp")} sizes={sizes} />
       <img
-        src={`/images/${asset.dir}/${asset.name}-${largest}.webp`}
+        src={imageUrl(asset.dir, asset.name, largest, "webp")}
         alt={alt}
         width={asset.width}
         height={asset.height}

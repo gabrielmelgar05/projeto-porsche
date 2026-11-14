@@ -25,9 +25,12 @@ export const metadata: Metadata = {
   applicationName: site.name,
   creator: site.studio,
   icons: {
-    // Provisional neutral icon. The licensed crest replaces these files (docs/CODEX_IMAGE_ASSETS.md).
-    icon: [{ url: "/icons/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+    icon: [
+      { url: "/icons/favicon-32.png?v=crest-20261113", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-16.png?v=crest-20261113", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=crest-20261113",
+    apple: [{ url: "/icons/apple-touch-icon.png?v=crest-20261113", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     type: "website",

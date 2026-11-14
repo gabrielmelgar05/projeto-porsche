@@ -25,47 +25,38 @@
             "assets-src/images/showroom/gt3rs-white-side.png"
           ]
         }
-      ]
-    },
-    {
-      "id": "heroCar",
-      "path": "assets-src/images/hero/gt3rs-hero-car.png",
-      "prompt": "Use case: background-extraction. Asset type: hero car cutout, layered website composition, one real transparent PNG. Input image is the definitive vehicle reference and edit target: preserve exactly this white 992.1 Porsche 911 GT3 RS, its body geometry, front-left three-quarter pose nose to the RIGHT, red forged Y-spoke wheels, red calipers, plain red sill stripe, black carbon bonnet, two bonnet outlets, black splitter, rear swan-neck wing and all details. Extract the ENTIRE car onto actual alpha transparency, no scene, no studio floor, no cast shadow, no solid-color background, no checkerboard baked into image. Clean precise anti-aliased edges around mirrors, wing supports, tires and air gaps, no halos, do not cut any part of vehicle. Soft neutral overhead highlights suitable for a graphite studio. Compose in a very WIDE 5:2 2400x960 transparent canvas with 4% transparent margin left and right and tires near bottom. Preserve all proportions; never stretch. No lettering, badges, license plates or watermark. Output genuine transparent PNG including transparent spaces between wing and body.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
-      "method": "image_gen",
-      "corrections": [
-        {
-          "prompt": "Use case: background-extraction. EDIT TARGET: supplied transparent car PNG. Correct the extraction ONLY. Remove all tiny WHITE studio-background fragments and WHITE HALOS floating outside the car silhouette, especially gaps between rear wing and roof, around wing uprights, along the roof edge and around the far mirror. These spaces must become fully transparent alpha, including gaps visible through wing supports. Preserve the complete car, true white body paint, precise geometry, same front-left three-quarter angle, same red wheels and tires, carbon wing and bonnet and highlights, and the existing transparent background. Do NOT remove any car body, do NOT turn white body paint transparent. No ground, no shadow, no opaque background, no checkerboard texture. Clean accurate professional alpha edges over near-black background without bright fringes. Keep 5:2 wide composition, full vehicle and margins intact. Genuine transparent PNG.",
-          "references": ["assets-src/images/hero/gt3rs-hero-car.png"]
-        }
-      ]
-    },
-    {
-      "id": "heroBackdrop",
-      "path": "assets-src/images/hero/gt3rs-hero-backdrop.png",
-      "prompt": "Use case: ads-marketing. Asset type: empty background for a layered cinematic automotive website Hero. EMPTY graphite industrial photography studio inside minimal brutalist architecture, seamless charcoal mineral concrete floor and distant subtle horizontal concrete wall, broad diffuse silver-grey daylight band along lower-middle third at 62% height, upper third and corners near black #0a0a0a, delicate mist and depth, physical concrete texture with no distracting seams, extremely quiet and sophisticated, restrained neutral grey palette, realistic low-key architectural photography. Landscape 16:9 2560x1440. Negative space across the center for enormous typography and a separately composited car. NO CAR, NO VEHICLE, no objects, no people, no text, no marks, no lettering, no logos, no neon or colored lights. No visible studio equipment or bright rectangular light fixtures.",
-      "references": [],
-      "method": "image_gen"
-    },
-    {
-      "id": "heroBackdrop-mobile",
-      "path": "assets-src/images/hero/gt3rs-hero-backdrop-portrait.png",
-      "prompt": "Use case: ads-marketing. Input image: reference for empty Hero background. Create its portrait companion with exactly the same graphite concrete studio, texture, neutral light and atmosphere. Vertical 9:16 architectural photograph 1080x1920. Empty dark charcoal minimal studio, concrete wall above and floor below, soft grey light band meeting floor at 65% down canvas, near-black upper half and calm dark corners. Restrained real concrete detail and haze. No car, no objects, no people, no text, no badges, no neon, no colored light. Negative space for a layered car and typography that will be added separately. Keep reference lighting language.",
-      "references": ["assets-src/images/hero/gt3rs-hero-backdrop.png"],
-      "method": "image_gen"
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/showroom/gt3rs-white-front34.png"
+      }
     },
     {
       "id": "showroom-white-side",
       "path": "assets-src/images/showroom/gt3rs-white-side.png",
       "prompt": "Use case: ads-marketing. Input photograph is the MASTER reference of the SAME physical 992 Porsche 911 GT3 RS. Create another independent photograph of precisely that car: same white body, black carbon bonnet and roof, TWO bonnet outlets, roof fins, same exact red Y-spoke center-lock wheels and red calipers, thin red lower-door stripe, tall two-element black swan-neck wing. Camera changes to a PERFECT full left SIDE PROFILE, nose to RIGHT, wheels level, zero three-quarter angle. Same soft mineral-grey studio cyclorama, 85mm at headlight height, overhead softbox and gentle tyre shadow as reference. Center the car with clear margin around nose, rear, wing and tyres; car occupies 78% width. Landscape 16:9 2560x1440 requested. Keep the car physical geometry and rims unchanged. Professional realistic studio photography, neutral grade. No text, side lettering, logos, emblems, wheel badges, licence plates, people, watermarks or montage. Plain red stripe only.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
-      "method": "image_gen"
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/showroom/gt3rs-white-side.png"
+      }
     },
     {
       "id": "showroom-white-rear34",
       "path": "assets-src/images/showroom/gt3rs-white-rear34.png",
       "prompt": "Use case: ads-marketing. Input image is the MASTER reference of the SAME white Porsche 911 GT3 RS 992.1. Produce its matching showroom REAR-LEFT THREE-QUARTER photograph; rear bumper nearest camera on RIGHT side of image, left side receding toward image LEFT. Keep same white body, black carbon roof/bonnet and correct tall TWO-element swan-neck wing above roof, exactly same red Y-spoke centre-lock wheels and red calipers, thin plain red lower sill stripe. Accurate 992 rear with full-width thin RED taillight bar, vertical engine-deck slats, two CENTER round exhaust outlets, correct black rear diffuser with vertical fins. No raised wordmarks, badges, logos or licence plates. Light mineral-grey seamless studio, same floor horizon, soft overhead softbox, realistic tyre shadows and neutral color as reference. Camera 85mm headlight height. Whole vehicle centered with generous margins, similar apparent size as master (car about 80% image width). Landscape 16:9 2560x1440. Same wheels, wing and paint. No montage, text, watermarks or people.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen",
       "corrections": [
         {
@@ -75,13 +66,22 @@
             "assets-src/images/showroom/gt3rs-white-side.png"
           ]
         }
-      ]
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/showroom/gt3rs-white-rear34.png"
+      }
     },
     {
       "id": "showroom-white-front",
       "path": "assets-src/images/showroom/gt3rs-white-front.png",
       "prompt": "Use case: ads-marketing. Input is MASTER vehicle reference. Photograph the SAME physical white Porsche 911 GT3 RS 992.1 in a perfectly symmetrical DIRECT FRONT view. Camera centered straight on, at headlight height with 85mm perspective, absolutely no three-quarter angle. Entire vehicle including both mirrors, all black front splitter, tires and tall swan-neck rear wing behind roof, centered with quiet studio margins. Preserve exact reference white paint, black carbon bonnet with twin radiator exit outlets, oval headlights with four LED points each, genuine 992 GT3 RS sculpted front bumper and side ducts, black fender gills, red Y-spoke wheels and red calipers. Same off-white mineral grey studio cyclorama, soft overhead light and natural contact shadow, neutral photo finish. Car fills comparable 55-60% frame width in this head-on angle at same camera distance. Landscape 16:9 2560x1440. No licence plate, logo, lettering, badge, watermark, person or UI.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen",
       "corrections": [
         {
@@ -98,7 +98,14 @@
             "assets-src/images/showroom/gt3rs-white-side.png"
           ]
         }
-      ]
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/showroom/gt3rs-white-front.png"
+      }
     },
     {
       "id": "showroom-white-rear",
@@ -117,82 +124,139 @@
             "assets-src/images/showroom/gt3rs-white-side.png"
           ]
         }
-      ]
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/showroom/gt3rs-white-rear.png"
+      }
     },
     {
       "id": "interiorCockpit",
       "path": "assets-src/images/interior/gt3rs-interior-cockpit.png",
       "prompt": "Use case: ads-marketing. Input image is the exterior master and material/color reference of our SAME white Porsche 911 GT3 RS 992.1. Generate its authentic 992 GT3 RS COCKPIT master photograph, seen through the open driver's door, left-hand-drive. Include steering wheel at image RIGHT around x66% y43%, the full driver's carbon-shell bucket seat toward image LEFT around x28% y65%, passenger seat behind and a dark roll bar and red six-point harnesses. Authentic 992 dashboard with central analogue tachometer flanked by two screens, black Race-Tex three-spoke steering wheel with red 12-o'clock stripe, FOUR small rotary setup controls on steering wheel spokes and DRS control, PDK console. Matte black microfibre, black carbon weave, subtle satin metal, red stitching and RED belts. Crisp professional low-key interior photography, broad soft daylight from open door, deep readable neutral shadows, restrained exposure matching the mineral-grey exterior campaign. Landscape 16:9 2560x1440. Real production interior geometry, no giant digital dashboard, no yoke. Wheel hub plain black, seats plain, no invented emblems, logos or gibberish lettering. No visible text, no people, no watermark, no montage. Show enough seat and wheel to anchor separate hotspots.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen",
       "corrections": [
         {
           "prompt": "Use case: precise-object-edit. EDIT this exact interior photo, keep seats, black material, red belts, dashboard, framing and light UNCHANGED. Correct ONLY the steering wheel controls: it must have exactly FOUR round setup rotary knobs in TOTAL, two on left and two on right, symmetrically arranged, plain black faces with tiny red index marks and absolutely NO letters, words or gibberish. Remove the extra fifth lower-right dial entirely and restore the uninterrupted black steering-wheel spoke beneath. Keep the plain hub and red top stripe. No invented text or logos anywhere. Keep wide 16:9 photograph and realistic factory 992 GT3 RS materials.",
-          "references": ["assets-src/images/interior/gt3rs-interior-cockpit.png"]
+          "references": [
+            "assets-src/images/interior/gt3rs-interior-cockpit.png"
+          ]
         }
-      ]
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/interior/gt3rs-interior-cockpit.png"
+      }
     },
     {
       "id": "detailFrontAero",
       "path": "assets-src/images/details/gt3rs-detail-front-aero.png",
       "prompt": "Use case: ads-marketing. Reference is the SAME campaign white Porsche 992 GT3 RS. Photograph a precise LOW FRONT-LEFT close-up of its actual BLACK FRONT SPLITTER, sideblade and sculpted front brake cooling ducts, with white bumper body above and a small part of red front wheel in background. Keep production 992.1 geometry and same carbon weave and materials. Macro 100mm camera almost floor level, splitter edge sharp with real thin carbon thickness, neutral directional soft key from upper left, dark graphite studio and subtle concrete ground, realistic contact shadows. Subject centered and important splitter details clear of top-right corner (dialog close button). Horizontal 3:2 at 1600x1067. No invented extra canards, no graphic airflow lines, no text, badges, people, logos, watermark or montage. Professional understated material photography.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen"
     },
     {
       "id": "detailWheel",
       "path": "assets-src/images/details/gt3rs-detail-wheel.png",
       "prompt": "Use case: ads-marketing. Reference is MASTER vehicle, preserve exactly its RED thin Y-spoke forged centre-lock wheel design and red brake caliper. Photograph the front wheel of the SAME white 992 Porsche 911 GT3 RS in a 3:2 horizontal close-up 1600x1067. Full wheel and tire comfortably within image with white wheel arch above, plain black center lock, red six-piston brake caliper clearly visible THROUGH spoke openings, realistic perforated iron brake disc and precise metal texture. Near-straight side view with slight photographic angle, 100mm macro, soft directional neutral light and graphite industrial studio, textured dark floor and grounded tire. Premium restrained material editorial, not a render. Preserve same spokes and color as reference. Important wheel centered away from top-right dialog close. No logos, text, tyre lettering, invented badges, watermarks, people or montage.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
-      "method": "image_gen"
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/details/gt3rs-detail-wheel.png"
+      }
     },
     {
       "id": "detailCarbon",
       "path": "assets-src/images/details/gt3rs-detail-carbon.png",
       "prompt": "Use case: ads-marketing. Reference MASTER is our exact white Porsche 992 GT3 RS with exposed black carbon bonnet. Produce horizontal 3:2 1600x1067 editorial MACRO of the bonnet carbon weave around ONE of the two actual radiator outlet nostrils, photographed obliquely from front left. One central outlet with crisp real molded geometry, deep recessed black mesh and carbon lip, substantial carbon bonnet surface around it and a subtle strip of white fender at edge to establish same car. Neutral raking soft light reveals woven fibres without exaggerated checkerboard texture, dark graphite studio, controlled specular highlights, elegant macro100mm, natural depth of field with actual subject sharp. No fake logos or lettering, no random holes, no added vents, no text or watermark, no people. Important outlet centered clear of upper-right dialog close button.",
-      "references": ["assets-src/images/showroom/gt3rs-white-front34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen"
     },
     {
       "id": "detailRearWing",
       "path": "assets-src/images/details/gt3rs-detail-rear-wing.png",
       "prompt": "Use case: ads-marketing. Reference image shows exact REAR of our white Porsche 911 GT3 RS 992.1. Create an editorial technical CLOSE-UP of its same black carbon TWO-ELEMENT REAR WING and swan-neck supports in horizontal 3:2 1600x1067. Both elements physically distinct with a visible narrow slot between fixed lower plane and DRS adjustable upper plane, authentic smoothly curved swan-neck supports attaching from ABOVE. Photograph from rear-left at roof height, wing at center, partial white rear quarter and black engine-deck slats below, neutral charcoal studio background and soft rim light tracing actual carbon weave. Show production mechanical hinges/actuator plausibly, no extra wings, no exaggerated devices. Crisp material detail, 100mm, restrained depth of field, neutral grey finish, no lettering, logos, badges, watermark, people or diagram. Keep top-right quiet for dialog close.",
-      "references": ["assets-src/images/showroom/gt3rs-white-rear34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png"
+      ],
       "method": "image_gen"
     },
     {
       "id": "detailDiffuser",
       "path": "assets-src/images/details/gt3rs-detail-diffuser.png",
       "prompt": "Use case: ads-marketing. Input is the REAR master of our exact white Porsche 911 GT3 RS 992.1. Generate a low close-up photograph of its black rear DIFFUSER and two central round exhaust outlets, same precise production geometry, white rear bumper above and sliver of red rear light at upper edge. Camera near floor, 100mm macro, slightly from left, horizontal3:2 1600x1067. Actual black vertical diffuser fins clearly visible and physically consistent with reference, satin carbon texture and realistic brushed-metal exhaust edges, subtle concrete ground, soft neutral studio side light and dark graphite background. Clear central subject and top-right not critical for dialog close button. No undercar fantasy parts, no extra exhausts, no logos, text, badges, watermarks or people. Restrained sharp material photography, natural shadows.",
-      "references": ["assets-src/images/showroom/gt3rs-white-rear34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png"
+      ],
       "method": "image_gen"
     },
     {
       "id": "detailCockpit",
       "path": "assets-src/images/details/gt3rs-detail-cockpit.png",
       "prompt": "Use case: ads-marketing. Input is definitive cockpit MASTER of this same 992 Porsche GT3 RS. Create a horizontal 3:2 1600x1067 detailed editorial close-up of its EXACT steering wheel and central analogue tachometer behind it, with four black rotary controls, plain faces tiny red index marks only, no lettering. Three-spoke matte carbon wheel, black Race-Tex rim with correct red12-o'clock stripe, plain black round hub, metal shift paddles, same red stitching and interior geometry as reference. Wheel centered and entire rim visible with generous margins, upper-right calm for dialog close button. View slightly from driver's left, 85mm, directional soft neutral light and dark readable black cabin. Exactly FOUR small rotary controls total (two left, two right), no fifth dial. No logos, emblems, fake labels or writing, no people, watermark or montage. Actual camera photograph and real textures, not a render.",
-      "references": ["assets-src/images/interior/gt3rs-interior-cockpit.png"],
-      "method": "image_gen"
+      "references": [
+        "assets-src/images/interior/gt3rs-interior-cockpit.png"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/details/gt3rs-detail-cockpit.png"
+      }
     },
     {
       "id": "detailSeat",
       "path": "assets-src/images/details/gt3rs-detail-seat.png",
       "prompt": "Use case: ads-marketing. Input is definitive interior MASTER of the SAME white Porsche 911 GT3 RS 992.1. Photograph a close-up of its exact driver's FULL CARBON-SHELL BUCKET SEAT, horizontal3:2 1600x1067, from the side, showing sculpted gloss-black carbon shell edges, twin harness openings, matte black Race-Tex center and RED six-point harness webbing with realistic plain black buckle and red stitching. Clearly a bucket seat, not a generic chair. Keep precise material, stitching and belt colors as reference. Directional soft neutral light grazing weave and cloth texture, dark readable charcoal cabin, shallow but realistic photographic depth, 100mm. Seat shell and shoulder opening central, upper-right quiet for dialog close. No fake embroidered names, emblems, writing, logos, harness branding, watermark, people or montage. Premium restrained tactile material photography.",
-      "references": ["assets-src/images/interior/gt3rs-interior-cockpit.png"],
+      "references": [
+        "assets-src/images/interior/gt3rs-interior-cockpit.png"
+      ],
       "method": "image_gen"
     },
     {
       "id": "precisionSide",
       "path": "assets-src/images/precision/gt3rs-precision-side.png",
       "prompt": "Use case: ads-marketing. Input is our exact white 992 Porsche 911 GT3 RS SIDE master. Produce chapter1 of a cinematic Precision in Motion triptych: the SAME complete car in full clean LEFT SIDE PROFILE nose RIGHT, same red Y-spoke wheels, red brakes, thin red stripe, black carbon hood/roof and tall two-plane wing. Landscape16:10 at2560x1600. Minimal mineral-grey industrial studio, medium-neutral exposure (less bright than showroom), broad overhead directional soft light, quiet textured concrete floor, wide negative space and natural soft contact shadow. Entire car WITH ALL MARGINS occupies about70% frame width and sits centrally slightly lower (wheel baseline75%). Camera85mm door height. Real proportions, subtle material detail, premium restrained photo with moderate contrast to bridge later brake and wing detail frames. No text, emblems, plates, people, watermark or montage. Preserve exact vehicle configuration.",
-      "references": ["assets-src/images/showroom/gt3rs-white-side.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-side.png"
+      ],
       "method": "image_gen",
       "corrections": [
         {
           "prompt": "Use case: precise-object-edit. Edit this exact side-profile photo. KEEP the same whole car shape, same angle pointing right, wheels, wing, colors, material and grey studio lighting. Change ONLY composition: move camera further away so car occupies SIXTY PERCENT of image WIDTH, centered horizontally, with at least20% EMPTY grey studio space on both left and right. Car centered vertically, tire baseline around70% down canvas. This photograph is center-cropped to a nearly SQUARE frame in a website; the ENTIRE vehicle including rear wing and nose MUST fit inside central60% of landscape image width. Extend same grey concrete studio around it, absolutely no distortion or cut parts. 16:10 landscape, same native1586x992 geometry. No writing, logos, badges or extra objects. This is a framing correction ONLY.",
-          "references": ["assets-src/images/precision/gt3rs-precision-side.png"]
+          "references": [
+            "assets-src/images/precision/gt3rs-precision-side.png"
+          ]
         }
-      ]
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/precision/gt3rs-precision-side.png"
+      }
     },
     {
       "id": "precisionBrake",
@@ -202,7 +266,14 @@
         "assets-src/images/details/gt3rs-detail-wheel.png",
         "assets-src/images/precision/gt3rs-precision-side.png"
       ],
-      "method": "image_gen"
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/precision/gt3rs-precision-brake.png"
+      }
     },
     {
       "id": "precisionWing",
@@ -212,13 +283,22 @@
         "assets-src/images/showroom/gt3rs-white-rear34.png",
         "assets-src/images/precision/gt3rs-precision-side.png"
       ],
-      "method": "image_gen"
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/precision/gt3rs-precision-wing.png"
+      }
     },
     {
       "id": "aeroWing",
       "path": "assets-src/images/aerodynamics/gt3rs-aero-rear-wing.png",
       "prompt": "Use case: ads-marketing. Input reference is SAME white Porsche 992 GT3 RS, red Y-spoke wheels, black carbon roof and huge two-element swan-neck wing. Create AERODYNAMICS main photograph, landscape16:10 2560x1600: rear-left three-quarter from slightly ABOVE roof height, car's entire rear and wing around center, wing broad across x25%-80% and y35%-53%, white rear body and part of wheel visible below, correct production wing supports and two planes separated by slot. Dark graphite concrete studio, controlled neutral soft top and rim light, realistic white paint and carbon texture, deep blacks with readable detail. Composition must also work when center cropped to 4:5 mobile: wing middle and rear body centered. Quiet upper-left for small caption and clean band across upper-middle for separate coded airflow lines. Do NOT paint airflow lines into photo. No writing, logos, plates, emblems, people, watermark or montage. Premium cinematic real photography, no colored neon or CGI look.",
-      "references": ["assets-src/images/showroom/gt3rs-white-rear34.png"],
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png"
+      ],
       "method": "image_gen"
     },
     {
@@ -249,7 +329,14 @@
         "assets-src/images/interior/gt3rs-interior-cockpit.png",
         "assets-src/images/details/gt3rs-detail-cockpit.png"
       ],
-      "method": "image_gen"
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/interior/gt3rs-interior-wheel.png"
+      }
     },
     {
       "id": "interiorSeats",
@@ -265,7 +352,9 @@
       "id": "interiorClubsport",
       "path": "assets-src/images/interior/gt3rs-interior-clubsport.png",
       "prompt": "Use case: ads-marketing. Reference is SAME black/red Porsche 992 GT3 RS interior master. Create VERTICAL4:5 1440x1800 close editorial photo looking into the space BEHIND its two bucket seats: authentic Clubsport dark steel rollover bar with simple clean joined tubes, black carbon seat shell edges in foreground and RED six-point harness shoulder webbing properly anchored to the bar, empty stripped rear cabin black carpet. Restrained graphic diagonal composition of actual motorsport components, visible mounting bolts and plausible belt path. Same black material, carbon weave and red belts as reference, diffuse neutral side light from grey studio through rear glass, soft rich graphite shadows, sharp tube joints and weave with natural depth. No full race cage additions or impossible tube intersections, no fake stitching or welds, no labels, texts, logos, emblems, watermark, people or montage. Fine realistic premium material photography.",
-      "references": ["assets-src/images/interior/gt3rs-interior-cockpit.png"],
+      "references": [
+        "assets-src/images/interior/gt3rs-interior-cockpit.png"
+      ],
       "method": "image_gen"
     },
     {
@@ -282,15 +371,364 @@
       "id": "finaleRear",
       "path": "assets-src/images/finale/gt3rs-finale-rear34.png",
       "prompt": "Use case: ads-marketing. Input is exact rear-three-quarter reference of our SAME white Porsche 911 GT3 RS 992.1 with black carbon and red Y-spoke wheels. Create memorable closing photograph for an independent editorial automotive concept. ULTRAWIDE21:9 2560x1097. Same car from REAR-LEFT THREE-QUARTER at dusk, fully visible centered in lower-middle, rear near right, nose away left, occupying only55% frame width. Huge correct two-element swan-neck wing clearly silhouetted against soft dim SILVER-GREY sky, thin full-width RED rear light glowing, center twin exhausts and black diffuser. Empty minimal concrete plaza beside massive dark graphite industrial concrete wall, quiet geometric architecture in distance, broad cool-neutral soft sidelight, faint natural floor reflection, no sunset orange, no neon, no saturated blue. Real studio-quality automotive photography with quiet cinematic depth, physical geometry and same white paint, red wheels, calipers and plain red stripe. Generous space around wing and car. No text, logos, badges, plates, people, watermark or montage. No signature in photo; signature exists separately as animated SVG.",
-      "references": ["assets-src/images/showroom/gt3rs-white-rear34.png"],
-      "method": "image_gen"
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/finale/gt3rs-finale-rear34.png"
+      }
     },
     {
       "id": "finaleRear-mobile",
       "path": "assets-src/images/finale/gt3rs-finale-rear34-portrait.png",
       "prompt": "Use case: ads-marketing. Input is definitive final campaign photograph. Produce its VERTICAL3:4 mobile companion 1080x1440, exactly SAME white Porsche 992 GT3 RS and same dusk concrete plaza with huge graphite brutalist wall. Same REAR-LEFT THREE-QUARTER viewpoint, same red Y-spoke wheels and red calipers, black carbon wing ABOVE roof with two elements, thin red tail light, twin CENTER exhausts. Recompose rather than crop: ENTIRE car including nose, wheels and wing fully visible with margins, car spans78% width in LOWER HALF, wheel baseline78%, wing around48%. Upper half atmospheric soft silver-grey dusk sky and quiet dark concrete wall, lower concrete plaza with subtle red reflection and true contact shadows. Exact same neutral light and architectural design as reference, restrained professional photographic realism. No stretching, no new objects, no people, text, plate, badge, logo, watermarks, signatures or collage.",
-      "references": ["assets-src/images/finale/gt3rs-finale-rear34.png"],
+      "references": [
+        "assets-src/images/finale/gt3rs-finale-rear34.png"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/finale/gt3rs-finale-rear34-portrait.png"
+      }
+    },
+    {
+      "id": "heroRoad",
+      "path": "assets-src/images/hero/gt3rs-hero-road.png",
+      "prompt": "Use case: ads-marketing. Asset type: a SINGLE COMPOSED cinematic automotive HERO PHOTOGRAPH for an independent AKLIO Studio 911 GT3 RS concept. Reference1 is the existing car identity (same 992.1 GT3 RS geometry, red forged Y-spoke wheels, black carbon hood/roof/splitter and authentic very tall two-part swan-neck wing). Reference2 is PAINT ONLY: Ice Grey Metallic, a subtle cool silver-grey with delicate blue undertone. Reference3 is MOOD/NEGATIVE SPACE ONLY: restrained cloudy road photography, do not copy its location, composition or vintage car. Reference4 is the REAL Porsche crest to reproduce faithfully, very small on the bonnet at its real position, without inventing a badge. Generate an original actual photograph: this Ice Grey 992 GT3 RS parked naturally on an empty curved mountain asphalt road, low mineral concrete roadside barrier, distant muted conifers and layered grey rocky hills in faint mist, expansive soft overcast SILVER-GREY sky in upper45% of frame. Neutral/cool grey, charcoal, black, restrained red wheel accents; no saturated greens, orange or teal. Camera85mm headlight height, front-left THREE QUARTER nose toward RIGHT and slightly toward viewer, full entire car including wing, tires, mirrors and splitter, car occupies about56% canvas WIDTH in central/lower half, wing begins around y51%, tires near85% height, generous margins. Upper45% calm negative space for HTML title and CTA (do not draw them). Physically coherent soft diffuse light, real tire contact shadows, vehicle genuinely part of same scene, crisp subtle metallic paint and carbon fibre. Premium editorial automotive PHOTOGRAPH, no plastic CGI, no fantasy, no excessive HDR. Landscape16:9 desktop, request high resolution. One photograph ONLY, no UI, text, navigation, buttons, watermarks or signatures. Retain a tiny authentic crest where visible and plain red sill accent; never invented lettering.",
+      "references": [
+        "/home/gabriel-melgar/Documentos/GitHub/projeto-porsche/assets-src/images/showroom/gt3rs-white-front34.png",
+        "/home/gabriel-melgar/Downloads/_ (23).jpeg",
+        "/home/gabriel-melgar/Downloads/_ (26).jpeg",
+        "/home/gabriel-melgar/Downloads/Download Porsche logo in vector (_EPS + .SVG +  (1).CDR) for free"
+      ],
+      "method": "image_gen",
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/hero/gt3rs-hero-road.png"
+      }
+    },
+    {
+      "id": "heroRoad-mobile",
+      "path": "assets-src/images/hero/gt3rs-hero-road-portrait.png",
+      "prompt": "Use case: ads-marketing. Input image is the definitive new HERO photograph: keep exactly this SAME Ice Grey Metallic Porsche911GT3RS992.1, red Y-spoke wheels, carbon hood/roof, huge two-element wing, small authentic hood crest, and SAME overcast mountain road, grey barrier, distant muted conifers/rocky hills and silver fog. Produce its PORTRAIT9:16 mobile companion by recomposing the same scene, not chopping the landscape photograph. Whole vehicle including wing, front bumper, all tyres and mirrors must fit in central LOWER area, occupying about78% canvas WIDTH with clear margins, front-left three-quarter nose RIGHT. The car occupies about y64% to86% of canvas; sky and quiet misty hills occupy upper60% with ample negative space for HTML headline/CTA. Keep consistent diffuse neutral/cool light, precise car proportions, real contact shadows on asphalt and natural road perspective. A SINGLE real-looking automotive photograph, no separate cutout, no floating car, no UI, text, watermarks, signatures or invented logos. Preserve the small real Porsche crest and factory red accents. Request1080x1920 portrait9:16, same art direction as desktop.",
+      "references": [
+        "/home/gabriel-melgar/Documentos/GitHub/projeto-porsche/assets-src/images/hero/gt3rs-hero-road.png"
+      ],
+      "method": "image_gen",
+      "revisions": [
+        {
+          "prompt": "Use case: ads-marketing. Image1 is the EDIT TARGET mobile Hero photograph, image2 the approved desktop scene and car identity. Recompose image1 as a new SINGLE PORTRAIT9:16 photograph of exactly the SAME Ice Grey Metallic 992.1 GT3 RS on the same overcast grey mountain road, barrier, misty rocky hills and quiet conifers. The current car is too wide for narrow mobile screens: pull camera BACK slightly so the ENTIRE car including wing and splitter occupies only about60% of portrait canvas WIDTH, from x20% to80%, centred, between y68% and83% vertically. Leave at least20% empty scene on EACH SIDE of the entire vehicle so a tall320px screen crop still shows all of it. Keep same front-left three-quarter angle/nose RIGHT, red Y-spoke wheels, carbon hood/roof/wing, small authentic hood crest, physically coherent tyre contact and shadows, soft diffuse neutral/cool illumination. Upper60% is calm sky/misty hills for headline and CTA. Real automotive editorial photograph; do not stretch or distort car, no floating cutout, no text, UI, watermark or signatures. Same art direction as desktop. Requested portrait1080x1920.",
+          "references": [
+            "assets-src/archive/hero-road-draft/gt3rs-hero-road-portrait.png",
+            "assets-src/images/hero/gt3rs-hero-road.png"
+          ],
+          "method": "image_gen"
+        }
+      ],
+      "brandEdits": {
+        "method": "localized perspective graphic composition; original pixels retained elsewhere",
+        "placements": "assets-src/brand/photo-placements.json",
+        "source": "assets-src/brand/porsche-crest-source.jpg",
+        "wordmarkSource": "assets-src/brand/porsche-wordmark.svg",
+        "original": "assets-src/archive/unbranded/hero/gt3rs-hero-road-portrait.png"
+      }
+    },
+    {
+      "id": "showroom-ice-grey-front34",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-front34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into ICE GREY METALLIC: very light cool silver-grey with delicate blue undertone, clearly cooler and slightly darker than white. Real fine metallic paint and soft studio reflections, subtle high-end Ice Grey finish. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
       "method": "image_gen"
+    },
+    {
+      "id": "showroom-ice-grey-side",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-side.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into ICE GREY METALLIC: very light cool silver-grey with delicate blue undertone, clearly cooler and slightly darker than white. Real fine metallic paint and soft studio reflections, subtle high-end Ice Grey finish. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-side.png",
+        "assets-src/images/showroom/gt3rs-ice-grey-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-ice-grey-rear34",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-rear34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into ICE GREY METALLIC: very light cool silver-grey with delicate blue undertone, clearly cooler and slightly darker than white. Real fine metallic paint and soft studio reflections, subtle high-end Ice Grey finish. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this Ice Grey shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png",
+        "assets-src/images/showroom/gt3rs-ice-grey-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-ice-grey-front",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-front.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into ICE GREY METALLIC: very light cool silver-grey with delicate blue undertone, clearly cooler and slightly darker than white. Real fine metallic paint and soft studio reflections, subtle high-end Ice Grey finish. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this Ice Grey shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front.png",
+        "assets-src/images/showroom/gt3rs-ice-grey-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-ice-grey-rear",
+      "path": "assets-src/images/showroom/gt3rs-ice-grey-rear.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into ICE GREY METALLIC: very light cool silver-grey with delicate blue undertone, clearly cooler and slightly darker than white. Real fine metallic paint and soft studio reflections, subtle high-end Ice Grey finish. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this Ice Grey shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear.png",
+        "assets-src/images/showroom/gt3rs-ice-grey-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-matte-black-front34",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-front34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into MATTE BLACK (concept finish): deep neutral charcoal-black paint with actual diffuse satin-matte material, broad softly diffused highlights and no glossy clearcoat reflections. Keep enough tonal separation for all panel contours. This is a material change confined to painted panels, NOT a global exposure reduction or dark filter. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-matte-black-side",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-side.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into MATTE BLACK (concept finish): deep neutral charcoal-black paint with actual diffuse satin-matte material, broad softly diffused highlights and no glossy clearcoat reflections. Keep enough tonal separation for all panel contours. This is a material change confined to painted panels, NOT a global exposure reduction or dark filter. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is MATTE MATERIAL reference ONLY; match its diffuse black finish. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-side.png",
+        "assets-src/images/showroom/gt3rs-matte-black-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-matte-black-rear34",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-rear34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into MATTE BLACK (concept finish): deep neutral charcoal-black paint with actual diffuse satin-matte material, broad softly diffused highlights and no glossy clearcoat reflections. Keep enough tonal separation for all panel contours. This is a material change confined to painted panels, NOT a global exposure reduction or dark filter. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is MATTE MATERIAL reference ONLY; match its diffuse black finish. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png",
+        "assets-src/images/showroom/gt3rs-matte-black-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-matte-black-front",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-front.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into MATTE BLACK (concept finish): deep neutral charcoal-black paint with actual diffuse satin-matte material, broad softly diffused highlights and no glossy clearcoat reflections. Keep enough tonal separation for all panel contours. This is a material change confined to painted panels, NOT a global exposure reduction or dark filter. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is MATTE MATERIAL reference ONLY; match its diffuse black finish. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front.png",
+        "assets-src/images/showroom/gt3rs-matte-black-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-matte-black-rear",
+      "path": "assets-src/images/showroom/gt3rs-matte-black-rear.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into MATTE BLACK (concept finish): deep neutral charcoal-black paint with actual diffuse satin-matte material, broad softly diffused highlights and no glossy clearcoat reflections. Keep enough tonal separation for all panel contours. This is a material change confined to painted panels, NOT a global exposure reduction or dark filter. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is MATTE MATERIAL reference ONLY; match its diffuse black finish. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear.png",
+        "assets-src/images/showroom/gt3rs-matte-black-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-gt-silver-front34",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-front34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GT SILVER METALLIC: neutral medium-light silver, darker and warmer/less blue than Ice Grey, fine metallic grain and believable directional soft reflections. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen",
+      "revisions": [
+        {
+          "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET: GT Silver car. Image2 original same camera/car: black carbon mirror reference. Correct ONLY both exterior MIRROR CAPS in image1 to the BLACK woven CARBON FIBRE of image2. Keep exact neutral GT Silver Metallic body paint, all body geometry, red wheels/calipers, carbon roof/hood/wing, crests, glass, reflections, lighting, studio background, floor, shadows, entire framing and canvas UNCHANGED. Do not paint any other part; tiny localized material correction only. Same landscape16:9 full photograph, no text or watermark.",
+          "method": "image_gen",
+          "references": [
+            "assets-src/images/showroom/gt3rs-gt-silver-front34.png",
+            "assets-src/images/showroom/gt3rs-white-front34.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-side",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-side.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GT SILVER METALLIC: neutral medium-light silver, darker and warmer/less blue than Ice Grey, fine metallic grain and believable directional soft reflections. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this neutral GT Silver shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-side.png",
+        "assets-src/images/showroom/gt3rs-gt-silver-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-gt-silver-rear34",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-rear34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GT SILVER METALLIC: neutral medium-light silver, darker and warmer/less blue than Ice Grey, fine metallic grain and believable directional soft reflections. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this neutral GT Silver shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png",
+        "assets-src/images/showroom/gt3rs-gt-silver-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-gt-silver-front",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-front.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GT SILVER METALLIC: neutral medium-light silver, darker and warmer/less blue than Ice Grey, fine metallic grain and believable directional soft reflections. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this neutral GT Silver shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front.png",
+        "assets-src/images/showroom/gt3rs-gt-silver-front34.png"
+      ],
+      "method": "image_gen",
+      "revisions": [
+        {
+          "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET: GT Silver front view. Image2 original same camera/car: black carbon mirror reference. Correct ONLY both exterior MIRROR CAPS in image1 to BLACK woven CARBON FIBRE as in image2; currently silver cap is wrong. Keep exact neutral GT Silver Metallic body paint, body geometry, wheels, carbon roof/hood/wing, hood crest, glass, reflections, lighting, studio background, floor, shadows, entire framing and canvas UNCHANGED. Do not paint any other part; tiny localized material correction only. Same landscape16:9 full photograph, no text or watermark.",
+          "method": "image_gen",
+          "references": [
+            "assets-src/images/showroom/gt3rs-gt-silver-front.png",
+            "assets-src/images/showroom/gt3rs-white-front.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "showroom-gt-silver-rear",
+      "path": "assets-src/images/showroom/gt3rs-gt-silver-rear.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GT SILVER METALLIC: neutral medium-light silver, darker and warmer/less blue than Ice Grey, fine metallic grain and believable directional soft reflections. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this neutral GT Silver shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear.png",
+        "assets-src/images/showroom/gt3rs-gt-silver-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-guards-red-front34",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-front34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GUARDS RED: classic saturated solid Porsche red, polished painted panels with clear studio reflections, naturally darker red in shadow. Wheels remain their original red shade, black carbon unchanged. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen",
+      "revisions": [
+        {
+          "prompt": "Use case: precise-object-edit. Image1 EDIT TARGET: Guards Red car. Image2 original same camera/car: black carbon mirror reference. Correct ONLY both exterior MIRROR CAPS in image1 to the BLACK woven CARBON FIBRE of image2. Keep exact Guards Red body paint, all body geometry, red wheels/calipers, carbon roof/hood/wing, crests, glass, reflections, lighting, studio background, floor, shadows, entire framing and canvas UNCHANGED. Do not paint any other part; tiny localized material correction only. Same landscape16:9 full photograph, no text or watermark.",
+          "method": "image_gen",
+          "references": [
+            "assets-src/images/showroom/gt3rs-guards-red-front34.png",
+            "assets-src/images/showroom/gt3rs-white-front34.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-side",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-side.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GUARDS RED: classic saturated solid Porsche red, polished painted panels with clear studio reflections, naturally darker red in shadow. Wheels remain their original red shade, black carbon unchanged. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY; match this Guards Red shade. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-side.png",
+        "assets-src/images/showroom/gt3rs-guards-red-front34.png"
+      ],
+      "method": "image_gen",
+      "revisions": [
+        {
+          "prompt": "Use case: precise-object-edit. Image1 is the EDIT TARGET: this Guards Red showroom car. Image2 is the original same car's material reference. Correct ONLY TWO localized small parts in image1: both exterior mirror CAPS must be BLACK woven CARBON FIBRE, and BOTH tall swan-neck rear wing SUPPORT STRUTS must be BLACK carbon/black metal exactly as in image2. The struts are currently wrongly red. Keep red painted body panels, red wheels, black carbon hood/roof/wing blade, all badges, glass, every body contour, exact car position/camera/framing, studio grey backdrop and ground entirely UNCHANGED. This is a tiny material correction; do not repaint body or regenerate a different composition. Same landscape16:9 full photograph. No new text, UI or watermark.",
+          "method": "image_gen",
+          "references": [
+            "assets-src/images/showroom/gt3rs-guards-red-side.png",
+            "assets-src/images/showroom/gt3rs-white-side.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "showroom-guards-red-rear34",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-rear34.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GUARDS RED: classic saturated solid Porsche red, polished painted panels with clear studio reflections, naturally darker red in shadow. Wheels remain their original red shade, black carbon unchanged. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY. Match this Guards Red shade on WHITE BODY PANELS ONLY. The mirror caps and swan-neck wing SUPPORT STRUTS in image1 are BLACK CARBON; keep them black carbon, do NOT paint them red. Black roof and wing also remain black. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear34.png",
+        "assets-src/images/showroom/gt3rs-guards-red-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-guards-red-front",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-front.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GUARDS RED: classic saturated solid Porsche red, polished painted panels with clear studio reflections, naturally darker red in shadow. Wheels remain their original red shade, black carbon unchanged. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY. Match this Guards Red shade on WHITE BODY PANELS ONLY. The mirror caps and swan-neck wing SUPPORT STRUTS in image1 are BLACK CARBON; keep them black carbon, do NOT paint them red. Black roof and wing also remain black. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front.png",
+        "assets-src/images/showroom/gt3rs-guards-red-front34.png"
+      ],
+      "method": "image_gen"
+    },
+    {
+      "id": "showroom-guards-red-rear",
+      "path": "assets-src/images/showroom/gt3rs-guards-red-rear.png",
+      "prompt": "Use case: precise-object-edit. Asset type: one existing showroom photograph, paint variant. Edit target is image1: preserve its EXACT 16:9 canvas, camera, framing, vehicle scale/position, body geometry, tall wing, red Y-spoke wheels, red brake calipers, black carbon hood/roof/aero pieces, glass, studio grey background, floor, contact shadow, all lighting direction and small authentic emblems. Change ONLY the white painted body panels and painted mirrors/wing parts into GUARDS RED: classic saturated solid Porsche red, polished painted panels with clear studio reflections, naturally darker red in shadow. Wheels remain their original red shade, black carbon unchanged. Carbon pieces must remain black carbon, red wheels/calipers/sill accent unchanged. No new body kit, no angle change, no crop or reframing, no text/UI/watermark. Match the original pixel geometry as closely as possible for smooth 2D gallery transitions. High-end photorealistic automotive material rendering. Preserve the small supplied Porsche crests and rear identification, never invent typography. Output only this one full photograph, landscape16:9. Image2 is PAINT MATERIAL reference ONLY. Match this Guards Red shade on WHITE BODY PANELS ONLY. The mirror caps and swan-neck wing SUPPORT STRUTS in image1 are BLACK CARBON; keep them black carbon, do NOT paint them red. Black roof and wing also remain black. Camera and geometry must stay exactly as image1.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-rear.png",
+        "assets-src/images/showroom/gt3rs-guards-red-front34.png"
+      ],
+      "method": "image_gen"
+    }
+  ],
+  "retiredAssets": [
+    {
+      "id": "heroCar",
+      "path": "assets-src/archive/hero-v1/gt3rs-hero-car.png",
+      "prompt": "Use case: background-extraction. Asset type: hero car cutout, layered website composition, one real transparent PNG. Input image is the definitive vehicle reference and edit target: preserve exactly this white 992.1 Porsche 911 GT3 RS, its body geometry, front-left three-quarter pose nose to the RIGHT, red forged Y-spoke wheels, red calipers, plain red sill stripe, black carbon bonnet, two bonnet outlets, black splitter, rear swan-neck wing and all details. Extract the ENTIRE car onto actual alpha transparency, no scene, no studio floor, no cast shadow, no solid-color background, no checkerboard baked into image. Clean precise anti-aliased edges around mirrors, wing supports, tires and air gaps, no halos, do not cut any part of vehicle. Soft neutral overhead highlights suitable for a graphite studio. Compose in a very WIDE 5:2 2400x960 transparent canvas with 4% transparent margin left and right and tires near bottom. Preserve all proportions; never stretch. No lettering, badges, license plates or watermark. Output genuine transparent PNG including transparent spaces between wing and body.",
+      "references": [
+        "assets-src/images/showroom/gt3rs-white-front34.png"
+      ],
+      "method": "image_gen",
+      "corrections": [
+        {
+          "prompt": "Use case: background-extraction. EDIT TARGET: supplied transparent car PNG. Correct the extraction ONLY. Remove all tiny WHITE studio-background fragments and WHITE HALOS floating outside the car silhouette, especially gaps between rear wing and roof, around wing uprights, along the roof edge and around the far mirror. These spaces must become fully transparent alpha, including gaps visible through wing supports. Preserve the complete car, true white body paint, precise geometry, same front-left three-quarter angle, same red wheels and tires, carbon wing and bonnet and highlights, and the existing transparent background. Do NOT remove any car body, do NOT turn white body paint transparent. No ground, no shadow, no opaque background, no checkerboard texture. Clean accurate professional alpha edges over near-black background without bright fringes. Keep 5:2 wide composition, full vehicle and margins intact. Genuine transparent PNG.",
+          "references": [
+            "assets-src/images/hero/gt3rs-hero-car.png"
+          ]
+        }
+      ],
+      "previousPath": "assets-src/images/hero/gt3rs-hero-car.png"
+    },
+    {
+      "id": "heroBackdrop",
+      "path": "assets-src/archive/hero-v1/gt3rs-hero-backdrop.png",
+      "prompt": "Use case: ads-marketing. Asset type: empty background for a layered cinematic automotive website Hero. EMPTY graphite industrial photography studio inside minimal brutalist architecture, seamless charcoal mineral concrete floor and distant subtle horizontal concrete wall, broad diffuse silver-grey daylight band along lower-middle third at 62% height, upper third and corners near black #0a0a0a, delicate mist and depth, physical concrete texture with no distracting seams, extremely quiet and sophisticated, restrained neutral grey palette, realistic low-key architectural photography. Landscape 16:9 2560x1440. Negative space across the center for enormous typography and a separately composited car. NO CAR, NO VEHICLE, no objects, no people, no text, no marks, no lettering, no logos, no neon or colored lights. No visible studio equipment or bright rectangular light fixtures.",
+      "references": [],
+      "method": "image_gen",
+      "previousPath": "assets-src/images/hero/gt3rs-hero-backdrop.png"
+    },
+    {
+      "id": "heroBackdrop-mobile",
+      "path": "assets-src/archive/hero-v1/gt3rs-hero-backdrop-portrait.png",
+      "prompt": "Use case: ads-marketing. Input image: reference for empty Hero background. Create its portrait companion with exactly the same graphite concrete studio, texture, neutral light and atmosphere. Vertical 9:16 architectural photograph 1080x1920. Empty dark charcoal minimal studio, concrete wall above and floor below, soft grey light band meeting floor at 65% down canvas, near-black upper half and calm dark corners. Restrained real concrete detail and haze. No car, no objects, no people, no text, no badges, no neon, no colored light. Negative space for a layered car and typography that will be added separately. Keep reference lighting language.",
+      "references": [
+        "assets-src/images/hero/gt3rs-hero-backdrop.png"
+      ],
+      "method": "image_gen",
+      "previousPath": "assets-src/images/hero/gt3rs-hero-backdrop-portrait.png"
+    }
+  ],
+  "refinementDate": "2026-11-13",
+  "brandSources": [
+    {
+      "path": "assets-src/brand/porsche-crest-source.jpg",
+      "origin": "User-provided file; actual JPEG736×736 despite vector wording in filename. Used as supplied for the requested independent concept. No external licence verification claimed."
+    },
+    {
+      "path": "assets-src/brand/porsche-wordmark.svg",
+      "origin": "Porsche AG wordmark; Wikimedia Commons file page attributes source www.porsche.com, PD-textlogo with trademark notice.",
+      "source": "https://commons.wikimedia.org/wiki/File:Porsche_Wordmark_Logo_Black.svg"
     }
   ]
 }
